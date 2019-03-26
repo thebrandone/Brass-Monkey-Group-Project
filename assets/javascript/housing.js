@@ -10,9 +10,8 @@ $("#searchCity").on("click", function (event) {
     
     var proxyURL = "https://cors-anywhere.herokuapp.com/";
     
-
-    var city = $("#city").val();
-    var state =$("#state").val();
+    var city = $("#city").val().trim();
+    var state =$("#state").val().trim();
 
     $("#city").empty();
     $("#state").empty();
@@ -25,10 +24,37 @@ $("#searchCity").on("click", function (event) {
         url: queryURL,
         method: "GET"
     }).then(function (response) {
-        var responseJson = xmlToJson(response);
-        console.log(responseJson);
-    });
+		var responseJson = xmlToJson(response);
+
+		console.log(responseJson);
+		
+		drawHousing(responseJson);
+	});
 });
+
+function drawHousing(response){
+
+	console.log("NAME: "+response["RegionChildren:regionchildren"].response.list.region[0].name);
+
+	//var index = response["RegionChildren:regionchildren"].response.list.length();
+	var obj = [response["RegionChildren:regionchildren"].response.list.region];
+
+	var length = Object.keys(obj[0]).length;
+
+	console.log(obj);
+
+	console.log("Length: "+length);
+
+	$("#housingData").empty();
+
+	for(var i=0;i<length;i++){
+		var info = $("<tr>");
+
+		info.html("<a target='_blank' href='"+obj[0][i].url+"'>"+obj[0][i].name +"</a>  $"+obj[0][i].zindex);
+
+		$("#housingData").append(info);
+	}
+};
 
 
 //https://gist.github.com/chinchang/8106a82c56ad007e27b1   CREDIT TO THIS GITHUB USER FOR XML - JSON
