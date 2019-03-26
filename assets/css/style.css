@@ -6,3 +6,8 @@
 .card{
   
 }
+
+#meetupData img {
+    width: 300px;
+    height: 200px;
+}
