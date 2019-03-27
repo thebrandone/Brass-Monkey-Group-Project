@@ -8,16 +8,77 @@ $(document).ready(function(){
 
     queryURL = proxyURL + equeryURL
 
-    $("#dropdownMenuButton").on("click", function(event) {
+    // var ctx = document.getElementById('income-chart');
+    // var myChart = new Chart(ctx, {
+    //     type: 'bar',
+    //     data: {
+    //         labels: ['USA', 'Blue'],
+    //         datasets: [{
+    //             label: 'Average Income',
+    //             data: [12, 19],
+    //             backgroundColor: [
+    //                 'rgba(255, 99, 132, 0.2)',
+    //                 'rgba(54, 162, 235, 0.2)'
+    //             ],
+    //             borderColor: [
+    //                 'rgba(255, 99, 132, 1)',
+    //                 'rgba(54, 162, 235, 1)'
+    //             ],
+    //             borderWidth: 1
+    //         }]
+    //     },
+    //     options: {
+    //         title:{
+    //             display:true,
+    //             text:"Average Income",
+    //             fontSize: 30
+    //         },
+    //         scales: {
+    //             yAxes: [{
+    //                 ticks: {
+    //                     beginAtZero: true
+    //                 }
+    //             }]
+    //         }
+    //     }
+    // });
+
+    // $("#income-chart").append(myChart);
+
+    $("#searchCity").on("click", function(event) {
         event.preventDefault();
-        var stateLower = $(this).attr("value");
+        var state = $("#state").val().trim();
+        var stateLower = state.toLowerCase();
+        console.log(state);
+        console.log(stateLower);
 
         $.ajax({
             url: queryURL,
             method: "GET"
         }).then(function(response){
+            var usaIncome = response.BEAAPI.Results.Data[2].DataValue;
+            // myChart.data.datasets.data.push(usaIncome);
+            console.log("USA", usaIncome);
+            $("#usa-data").append(usaIncome);
+            // var usaDiv = ("<div>");
+            // var p = $("<p>");
+            // p.attr(usaIncome);
+
+            // usaDiv.appendChild(p);
+            // $("#state-date").append(usaDiv);
+
             if(stateLower === "alabama"){
                 console.log("Alabama ", response.BEAAPI.Results.Data[5].DataValue)
+                var stateInfo = response.BEAAPI.Results.Data[5].DataValue;
+                // labels.push(stateInfo)
+                console.log(stateInfo);
+                $("#state-data").append(stateInfo);
+                // var stateDiv = ("<div>");
+                // var sp = $("<p>");
+                // sp.attr(stateInfo);
+    
+                // stateDiv.appendChild(sp);
+                // $("#state-date").append(stateDiv);
             };
             if(stateLower === "alaska"){
                 console.log("Alaska ", response.BEAAPI.Results.Data[8].DataValue)
@@ -40,7 +101,7 @@ $(document).ready(function(){
             if(stateLower === "delaware"){
                 console.log("Delaware ", response.BEAAPI.Results.Data[26].DataValue)
             };
-            if(stateLower === "districtofcolumbia"){
+            if(stateLower === "district of columbia"){
                 console.log("District of Columbia ", response.BEAAPI.Results.Data[29].DataValue)
             };
             if(stateLower === "florida"){
@@ -103,22 +164,22 @@ $(document).ready(function(){
             if(stateLower === "nevada"){
                 console.log("Nevada ", response.BEAAPI.Results.Data[89].DataValue)
             };
-            if(stateLower === "newhampshire"){
+            if(stateLower === "new hampshire"){
                 console.log("New Hampshire ", response.BEAAPI.Results.Data[92].DataValue)
             };
-            if(stateLower === "newjersey"){
+            if(stateLower === "new jersey"){
                 console.log("New Jersey ", response.BEAAPI.Results.Data[95].DataValue)
             };
-            if(stateLower === "newmexico"){
+            if(stateLower === "new mexico"){
                 console.log("New Mexico ", response.BEAAPI.Results.Data[98].DataValue)
             };
-            if(stateLower === "newyork"){
+            if(stateLower === "new york"){
                 console.log("New York ", response.BEAAPI.Results.Data[101].DataValue)
             };
-            if(stateLower === "northcarolina"){
+            if(stateLower === "north carolina"){
                 console.log("North Carolina ", response.BEAAPI.Results.Data[104].DataValue)
             };
-            if(stateLower === "northdakota"){
+            if(stateLower === "north dakota"){
                 console.log("North Dakota ", response.BEAAPI.Results.Data[107].DataValue)
             };
             if(stateLower === "ohio"){
@@ -133,10 +194,10 @@ $(document).ready(function(){
             if(stateLower === "pennsylvania"){
                 console.log("Pennsylvania ", response.BEAAPI.Results.Data[119].DataValue)
             };
-            if(stateLower === "rhodeisland"){
+            if(stateLower === "rhode island"){
                 console.log("Rhode Island ", response.BEAAPI.Results.Data[122].DataValue)
             };
-            if(stateLower === "southcarolina"){
+            if(stateLower === "south carolina"){
                 console.log("South Carolina ", response.BEAAPI.Results.Data[125].DataValue)
             };
             if(stateLower === "tennessee"){
@@ -157,7 +218,7 @@ $(document).ready(function(){
             if(stateLower === "washington"){
                 console.log("Washington ", response.BEAAPI.Results.Data[143].DataValue)
             };
-            if(stateLower === "westvirginia"){
+            if(stateLower === "west virginia"){
                 console.log("West Virginia ", response.BEAAPI.Results.Data[146].DataValue)
             };
             if(stateLower === "wisconsin"){
@@ -170,8 +231,8 @@ $(document).ready(function(){
     
     
             
-            console.log(response);  
-            console.log("Alabama ",response.BEAAPI.Results.Data[4].DataValue)
+            // console.log(response);  
+            // console.log("Alabama ",response.BEAAPI.Results.Data[4].DataValue)
             
         })
     })
