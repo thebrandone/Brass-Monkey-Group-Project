@@ -1,58 +1,68 @@
 var apiKey = "X1-ZWz181dk3qv8y3_8uv2u"
+var budget = 0;
+var responseList;
+var city ="";
+var state="";
+var obj;
 
 $("#searchCity").on("click", function (event) {
-    // This line allows us to take advantage of the HTML "submit" property
-    // This way we can hit enter on the keyboard and it registers the search
-    // (in addition to clicks). Prevents the page from reloading on form submit.
-    event.preventDefault();
+	// This line allows us to take advantage of the HTML "submit" property
+	// This way we can hit enter on the keyboard and it registers the search
+	// (in addition to clicks). Prevents the page from reloading on form submit.
+	event.preventDefault();
 
-    // Empty the region associated with the articles
-    
-    var proxyURL = "https://cors-anywhere.herokuapp.com/";
-    
-    var city = $("#city").val().trim();
-    var state =$("#state").val().trim();
+	// Empty the region associated with the articles
 
-    $("#city").empty();
-    $("#state").empty();
+	var proxyURL = "https://cors-anywhere.herokuapp.com/";
 
-    var queryURL = "http://www.zillow.com/webservice/GetRegionChildren.htm?zws-id=" + apiKey + "&state=" +state +"&city=" + city + "&childtype=neighborhood";
-    
-    queryURL = proxyURL + queryURL;
+	city = $("#city").val().trim();  //Pulls in City
+	city = city.replace(/\s/g,'');  //removes spaces
+	state = $("#state").val().trim(); //Pulls in State
+	budget = parseInt($("#budget").val());    //Pulls in home budget
 
-    $.ajax({
-        url: queryURL,
-        method: "GET"
-    }).then(function (response) {
+	$("#city").text("");
+	$("#state").text("");
+	$("#budget").text("");
+
+	var queryURL = "http://www.zillow.com/webservice/GetRegionChildren.htm?zws-id=" + apiKey + "&state=" + state + "&city=" + city + "&childtype=neighborhood";
+
+	queryURL = proxyURL + queryURL;
+
+	$.ajax({
+		url: queryURL,
+		method: "GET"
+	}).then(function (response) {
 		var responseJson = xmlToJson(response);
 
 		console.log(responseJson);
-		
+		responseList = responseJson;
 		drawHousing(responseJson);
 	});
 });
 
-function drawHousing(response){
-
-	console.log("NAME: "+response["RegionChildren:regionchildren"].response.list.region[0].name);
-
-	//var index = response["RegionChildren:regionchildren"].response.list.length();
-	var obj = [response["RegionChildren:regionchildren"].response.list.region];
+function drawHousing(response) {
+	obj = [response["RegionChildren:regionchildren"].response.list.region];
 
 	var length = Object.keys(obj[0]).length;
+	var lowerBudget = budget - (budget * .5); //Makes lower budget half of amount lower
+	var higherBudget = budget + (budget * .1);
 
-	console.log(obj);
+	console.log(budget);
+	console.log("LowerBudget: " + lowerBudget);
+	console.log("HigherBudget: " + higherBudget);
 
-	console.log("Length: "+length);
+	console.log("Length: " + length);
 
-	$("#housingData").empty();
+	$("#houseRow").empty();
 
-	for(var i=0;i<length;i++){
+	for (var i = 0; i < length; i++) {
 		var info = $("<tr>");
 
-		info.html("<a target='_blank' href='"+obj[0][i].url+"'>"+obj[0][i].name +"</a>  $"+obj[0][i].zindex);
+		info.html("<td><a class='openInfo' index="+i+" href='" + obj[0][i].url + "'>" + obj[0][i].name + "</a></td><td>$" + obj[0][i].zindex + "<td>");
 
-		$("#housingData").append(info);
+		if (obj[0][i].zindex >= lowerBudget && obj[0][i].zindex <= higherBudget) {
+			$("#houseRow").append(info);
+		}
 	}
 };
 
@@ -66,7 +76,7 @@ function xmlToJson(xml) {
 	if (xml.nodeType == 1) { // element
 		// do attributes
 		if (xml.attributes.length > 0) {
-		obj["@attributes"] = {};
+			obj["@attributes"] = {};
 			for (var j = 0; j < xml.attributes.length; j++) {
 				var attribute = xml.attributes.item(j);
 				obj["@attributes"][attribute.nodeName] = attribute.nodeValue;
@@ -82,13 +92,13 @@ function xmlToJson(xml) {
 		obj = xml.childNodes[0].nodeValue;
 	}
 	else if (xml.hasChildNodes()) {
-		for(var i = 0; i < xml.childNodes.length; i++) {
+		for (var i = 0; i < xml.childNodes.length; i++) {
 			var item = xml.childNodes.item(i);
 			var nodeName = item.nodeName;
-			if (typeof(obj[nodeName]) == "undefined") {
+			if (typeof (obj[nodeName]) == "undefined") {
 				obj[nodeName] = xmlToJson(item);
 			} else {
-				if (typeof(obj[nodeName].push) == "undefined") {
+				if (typeof (obj[nodeName].push) == "undefined") {
 					var old = obj[nodeName];
 					obj[nodeName] = [];
 					obj[nodeName].push(old);
@@ -99,3 +109,25 @@ function xmlToJson(xml) {
 	}
 	return obj;
 }
+
+$(document).on("click", ".openInfo", function (e) {
+	e.preventDefault();
+	var index = $(this).attr("index");
+
+	// alert(obj[0][index].name);
+	// alert(index);
+	// $("#tempInfo").html('<div id="zillow-large-search-box-widget-container" style="width:432px;overflow:hidden;background-color:#e7f1fd;color:#555; font: normal normal normal 13px verdana,arial,sans-serif;line-height:13px;margin:0 auto;padding:0;text-align:center;border:1px solid #adcfff;letter-spacing:0;text-transform:none;"><h2 style="color:#d61;text-align:left;font-size:20px;line-height:20px;font-weight:normal;float:left;width:200px;margin-left:10px;margin-top:5px;letter-spacing:0;text-transform:none;">Find Homes</h2><div style="float:right;"><a href="https://www.zillow.com/" target="_blank" rel="nofollow"><img alt="Zillow Real Estate Information" style="border:0;" src="https://www.zillow.com/widgets/GetVersionedResource.htm?path=/static/images/powered-by-zillow.gif"></img></a></div><iframe scrolling="no" src="https://www.zillow.com/widgets/search/LargeSearchBoxWidget.htm?did=zillow-large-search-box-iframe-widget&type=iframe&rgname='+responseList[0][index].name+'+'+city+'+'+state+'&shvi=yes" width="430" frameborder="0" height="400"></iframe><table id="zillow-tnc-widget-footer-links" width="100%" style="font: normal normal normal 10px verdana,arial,sans-serif;text-align:left;line-height:12px;margin:10px 5px;padding:0;border-spacing:0;border-collapse:collapse;"><tbody style="margin:0;padding:0;"><tr style="margin:0;padding:0;"><td style="font-weight:bold;font-size:10px;color:#555;text-align:left;margin:0;padding:0;">QUICK LINKS:</td></tr><tr style="margin:0;padding:0;"><td style="margin:0;padding:0;"><span id="widgetFooterLink" class="regionBasedLink"><a href="https://www.zillow.com/northeast-raleigh-raleigh-nc/" target="_blank" rel="nofollow" style="color:#36b;font-family:verdana,arial,sans-serif;font-size:10px;margin:0 5px 0 0;padding:0;text-decoration:none;"><span class="region">Northeast Raleigh</span> Real Estate Listing</a></span></td><td style="margin:0;padding:0;"><span id="widgetFooterLink"><a href="https://www.zillow.com/mortgage-rates/" target="_blank" rel="nofollow" style="color:#36b;font-family:verdana,arial,sans-serif;font-size:10px;margin:0 5px 0 0;padding:0;text-decoration:none;">Mortgage Rates</a></span></td><td style="margin:0;padding:0;"><span id="widgetFooterLink"><a href="https://www.zillow.com/refinance/" target="_blank" rel="nofollow" style="color:#36b;font-family:verdana,arial,sans-serif;font-size:10px;margin:0 5px 0 0;padding:0;text-decoration:none;">Refinancing</a></span></td></tr><tr style="margin:0;padding:0;"><td style="margin:0;padding:0;"><span id="widgetFooterLink" class="regionBasedLink"><a href="https://www.zillow.com/northeast-raleigh-raleigh-nc/foreclosures/" target="_blank" rel="nofollow" style="color:#36b;font-size:10px;margin:0 5px 0 0;padding:0;text-decoration:none;"><span class="region">Northeast Raleigh</span> Foreclosures</a></span></td><td style="margin:0;padding:0;"><span id="widgetFooterLink"><a href="https://www.zillow.com/mortgage-calculator/" target="_blank" rel="nofollow" style="color:#36b;font-size:10px;margin:0 5px 0 0;padding:0;text-decoration:none;">Mortgage Calculators</a></span></td><td style="margin:0;padding:0;"><span id="widgetFooterLink"><a href="https://www.zillow.com/mortgage-rates/" target="_blank" rel="nofollow" style="color:#36b;font-size:10px;margin:0 5px 0 0;padding:0;text-decoration:none;">Purchase Loans</a></span></td></tr></tbody></table><button id="close">CLOSE INFO</button></div>')
+	$("#tempInfo").html('<div id="zillow-large-search-box-widget-container" style="width:432px;overflow:hidden;background-color:#e7f1fd;color:#555; font: normal normal normal 13px verdana,arial,sans-serif;line-height:13px;margin:0 auto;padding:0;text-align:center;border:1px solid #adcfff;letter-spacing:0;text-transform:none;"><h2 style="color:#d61;text-align:left;font-size:20px;line-height:20px;font-weight:normal;float:left;width:200px;margin-left:10px;margin-top:5px;letter-spacing:0;text-transform:none;">Find Homes</h2><div style="float:right;"><a href="https://www.zillow.com/" target="_blank" rel="nofollow"><img alt="Zillow Real Estate Information" style="border:0;" src="https://www.zillow.com/widgets/GetVersionedResource.htm?path=%2Fstatic%2Fimages%2Fpowered-by-zillow.gif"></img></a></div><iframe scrolling="no" src="https://www.zillow.com/widgets/search/LargeSearchBoxWidget.htm?did=zillow-large-search-box-iframe-widget&type=iframe&rgname='+obj[0][index].name+'+'+city+'+'+state+'&shvi=yes" width="430" frameborder="0" height="400"></iframe><table id="zillow-tnc-widget-footer-links" width="100%" style="font: normal normal normal 10px verdana,arial,sans-serif;text-align:left;line-height:12px;margin:10px 5px;padding:0;border-spacing:0;border-collapse:collapse;"><tbody style="margin:0;padding:0;"><tr style="margin:0;padding:0;"><td style="font-weight:bold;font-size:10px;color:#555;text-align:left;margin:0;padding:0;">QUICK LINKS:</td></tr><tr style="margin:0;padding:0;"><td style="margin:0;padding:0;"><span id="widgetFooterLink" class="regionBasedLink"><a href="https://www.zillow.com/'+city+'-'+state+'/" target="_blank" rel="nofollow" style="color:#36b;font-family:verdana,arial,sans-serif;font-size:10px;margin:0 5px 0 0;padding:0;text-decoration:none;"><span class="region">Raleigh</span> Real Estate Listing</a></span></td><td style="margin:0;padding:0;"><span id="widgetFooterLink"><a href="https://www.zillow.com/mortgage-rates/" target="_blank" rel="nofollow" style="color:#36b;font-family:verdana,arial,sans-serif;font-size:10px;margin:0 5px 0 0;padding:0;text-decoration:none;">Mortgage Rates</a></span></td><td style="margin:0;padding:0;"><span id="widgetFooterLink"><a href="https://www.zillow.com/refinance/" target="_blank" rel="nofollow" style="color:#36b;font-family:verdana,arial,sans-serif;font-size:10px;margin:0 5px 0 0;padding:0;text-decoration:none;">Refinancing</a></span></td></tr><tr style="margin:0;padding:0;"><td style="margin:0;padding:0;"><span id="widgetFooterLink" class="regionBasedLink"><a href="https://www.zillow.com/'+city+'-'+state+'/foreclosures/" target="_blank" rel="nofollow" style="color:#36b;font-size:10px;margin:0 5px 0 0;padding:0;text-decoration:none;"><span class="region">Raleigh</span> Foreclosures</a></span></td><td style="margin:0;padding:0;"><span id="widgetFooterLink"><a href="https://www.zillow.com/mortgage-calculator/" target="_blank" rel="nofollow" style="color:#36b;font-size:10px;margin:0 5px 0 0;padding:0;text-decoration:none;">Mortgage Calculators</a></span></td><td style="margin:0;padding:0;"><span id="widgetFooterLink"><a href="https://www.zillow.com/mortgage-rates/" target="_blank" rel="nofollow" style="color:#36b;font-size:10px;margin:0 5px 0 0;padding:0;text-decoration:none;">Purchase Loans</a></span></td></tr></tbody></table><button id="close">CLOSE INFO</button></div>');
+	
+	$("#tempInfo").fadeIn('slow');
+	$("#houseRow").fadeOut('slow');
+	// $(".popup").fadeIn('slow');
+});
+
+$(document).on("click", "#close", function () {
+	$("#houseRow").fadeIn("slow");
+	$("#tempInfo").fadeOut("slow");
+});
+
+
+
