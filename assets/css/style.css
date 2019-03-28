@@ -7,6 +7,19 @@
   text-align: center;
 }
 
-#housingData p{
-    margin-bottom: 1px;
+#zillow-large-search-box-widget-container{
+    width: 100%;
+}
+
+div#charts{
+    padding-left: 38%;
+}
+
+#houseData,#economicData,#meetupData,#weatherData{
+    max-height: 600px;
+    overflow-y: scroll;
+    border-style: solid;
+    border-width: 2px;
+    border-color: black;
+    padding: 0;
 }
