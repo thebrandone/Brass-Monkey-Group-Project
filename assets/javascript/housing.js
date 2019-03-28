@@ -62,14 +62,7 @@ function drawHousing(response) {
 
 		if (obj[0][i].zindex >= lowerBudget && obj[0][i].zindex <= higherBudget) {
 			$("#houseRow").append(info);
-		}
-		else{
-			if(!obj[0][i].zindex){
-				info.html("<td><a class='openInfo' index="+i+" href='" + obj[0][i].url + "'>" + obj[0][i].name + "</a></td><td>N/A</td>");
-				$("#houseRow").append(info);
-			}
-		}
-		
+		}		
 	}
 };
 
