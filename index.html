@@ -8,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
     <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css">
 </head>
 
@@ -17,42 +18,55 @@
     <input id="city">
     State:
     <input id="state">
+    Home Budget:
+    <input id="budget">
     <button id="searchCity">Search City</button>
     <br>
 
-    <div id="cityBlock" class="jumbotron">
+    <div class="jumbotron cityBlock">
         <div class="row">
-            <div class="col-3">
+            <div class="col-3" id="houseData">
                 <div class="card">
-                    <div class="card-body">
+                    <div id="houseCard" class="card-body">
                         <h5 class="card-title">Housing Data</h5>
-                        <p class="card-text">Data Here</p>
+                        <p class="card-text"></p>
+                        <table class="table">
+                            <thead class="thead-dark">
+                                <tr id="titleData">
+                                    <th scope="col">Neighborhood</th>
+                                    <th scope="col">Average Price</th>
+                                </tr>
+                            </thead>
+                            <tbody id="houseRow">
+                                <div id="tempInfo"></div>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
-            <div class="col-3">
+            <div class="col-3" id="economicData">
                 <div class="card">
                     <div class="card-body">
-                        <h5 class="card-title">Traffic Data</h5>
-                        <p class="card-text">Data Here</p>
+                        <h5 class="card-title">Economic Data</h5>
+                        <p class="card-text"></p>
                     </div>
                 </div>
             </div>
 
-            <div class="col-3">
+            <div class="col-3" id="meetupData">
                 <div class="card">
                     <div class="card-body" id="meetupData">
                         <h5 class="card-title">Meetup Data</h5>
-                        <p class="card-text">Data Here</p>
+                        <p class="card-text"></p>
                     </div>
                 </div>
             </div>
 
-            <div class="col-3">
+            <div class="col-3" id="weatherData">
                 <div class="card">
                     <div class="card-body">
-                        <h5 class="card-title">Jobs Data</h5>
-                        <p class="card-text">Data Here</p>
+                        <h5 class="card-title">Weather Data</h5>
+                        <p class="card-text"></p>
                     </div>
                 </div>
             </div>
@@ -61,7 +75,6 @@
 
     <script src="assets/javascript/housing.js"></script>
     <script src="assets/javascript/meetup.js"></script>
-    <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
 
 </body>
 
