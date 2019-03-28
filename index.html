@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>The Perfect Fit</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+    <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css">
+</head>
+
+<body>
+    <h1>The Perfect Fit</h1>
+    City:
+    <input id="city">
+    State:
+    <input id="state">
+    Home Budget:
+    <input id="budget">
+    <button id="searchCity">Search City</button>
+    <br>
+
+    <div class="jumbotron cityBlock">
+        <div class="row">
+            <div class="col-3" id="houseData">
+                <div class="card">
+                    <div id="houseCard" class="card-body">
+                        <h5 class="card-title">Housing Data</h5>
+                        <p class="card-text"></p>
+                        <table class="table">
+                            <thead class="thead-dark">
+                                <tr id="titleData">
+                                    <th scope="col">Neighborhood</th>
+                                    <th scope="col">Average Price</th>
+                                </tr>
+                            </thead>
+                            <tbody id="houseRow">
+                                <div id="tempInfo"></div>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="col-3" id="economicData">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Economic Data</h5>
+                        <p class="card-text"></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-3" id="meetupData">
+                <div class="card">
+                    <div class="card-body" id="meetupData">
+                        <h5 class="card-title">Meetup Data</h5>
+                        <p class="card-text"></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-3" id="weatherData">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Weather Data</h5>
+                        <p class="card-text"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/javascript/housing.js"></script>
+    <script src="assets/javascript/meetup.js"></script>
+
+</body>
+
+</html>
