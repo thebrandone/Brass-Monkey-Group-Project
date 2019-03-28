@@ -8,44 +8,44 @@ $(document).ready(function () {
 
     queryURL = proxyURL + equeryURL
 
-    function drawGraph() {
-        var ctx = document.getElementById('income-chart');
-        var myChart = new Chart(ctx, {
-            type: 'bar',
-            data: {
-                labels: ['USA', 'AL'],
-                datasets: [{
-                    label: 'Average Income',
-                    data: [53892,],
-                    backgroundColor: [
-                        'rgba(255, 99, 132, 0.2)',
-                        'rgba(54, 162, 235, 0.2)'
-                    ],
-                    borderColor: [
-                        'rgba(255, 99, 132, 1)',
-                        'rgba(54, 162, 235, 1)'
-                    ],
-                    borderWidth: 1
-                }]
+
+    var ctx = document.getElementById('income-chart');
+    var myChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ['USA', 'AL'],
+            datasets: [{
+                label: 'Average Income',
+                data: [53892,],
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(54, 162, 235, 0.2)'
+                ],
+                borderColor: [
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            title: {
+                display: true,
+                text: "Average Income",
+                fontSize: 30
             },
-            options: {
-                title: {
-                    display: true,
-                    text: "Average Income",
-                    fontSize: 30
-                },
-                scales: {
-                    yAxes: [{
-                        ticks: {
-                            beginAtZero: true
-                        }
-                    }]
-                }
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true
+                    }
+                }]
             }
-        });
-        $("#income-chart").append(myChart);
-        
-    };
+        }
+    });
+    $("#income-chart").append(myChart);
+
+
 
 
 
@@ -250,9 +250,15 @@ $(document).ready(function () {
 
         });
 
-       
+
         // success; drawGraph();
-      
+        function updateConfig(chart) {
+            chart.update();
+        }
+
+        updateConfig();
+
+    
 
 
     })
