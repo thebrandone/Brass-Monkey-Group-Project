@@ -33,7 +33,6 @@ $("#searchCity").on("click", function (event) {
 	}).then(function (response) {
 		var responseJson = xmlToJson(response);
 
-		console.log(responseJson);
 		responseList = responseJson;
 		drawHousing(responseJson);
 	});
@@ -68,8 +67,6 @@ $("#compareCity").on("click", function (event) {
 		method: "GET"
 	}).then(function (response) {
 		var responseJson = xmlToJson(response);
-
-		console.log(responseJson);
 		responseList = responseJson;
 		drawHousing(responseJson);
 	});
@@ -81,12 +78,6 @@ function drawHousing(response) {
 	var length = Object.keys(obj[0]).length;
 	var lowerBudget = budget - (budget * .4); //Makes lower budget half of amount lower
 	var higherBudget = budget + (budget * .1);
-
-	console.log(budget);
-	console.log("LowerBudget: " + lowerBudget);
-	console.log("HigherBudget: " + higherBudget);
-
-	console.log("Length: " + length);
 
 	if (compareButton === 0) {
 		$("#houseRow").empty();

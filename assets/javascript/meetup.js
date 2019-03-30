@@ -19,6 +19,7 @@ $(document).ready(function(){
             url: queryURL,
             method: "GET"
           }).then(function(response) {
+            console.log(response);
               for (i=0;i<response.length;i++) {
                 // create new div to put data  
                 var div = $("<div>");
