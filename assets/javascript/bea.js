@@ -588,7 +588,7 @@ $("#compareCity").on("click", function (event) {
         myChart2.data.labels.push("USA")
         myChart2.data.datasets[0].data.push(avgInfo);
         
-        $("#us-avg").text(usaIncome);
+        $("#us-avg2").text(usaIncome);
 
         if (stateLower === "al") {
             var stateInfo = response.BEAAPI.Results.Data[5].DataValue;
@@ -597,7 +597,7 @@ $("#compareCity").on("click", function (event) {
             myChart2.data.labels.push("AL")
             myChart2.data.datasets[0].data.push(specInfo);
             myChart2.update();
-            $("#state-avg").text(stateInfo);
+            $("#state-avg2").text(stateInfo);
 
         };
         if (stateLower === "ak") {
@@ -607,7 +607,7 @@ $("#compareCity").on("click", function (event) {
             myChart2.data.labels.push("AK")
             myChart2.data.datasets[0].data.push(specInfo);
             myChart2.update();
-            $("#state-avg").text(stateInfo);
+            $("#state-avg2").text(stateInfo);
 
         };
         if (stateLower === "az") {
@@ -617,7 +617,7 @@ $("#compareCity").on("click", function (event) {
             myChart2.data.labels.push("AZ")
             myChart2.data.datasets[0].data.push(specInfo);
             myChart2.update();
-            $("#state-avg").text(stateInfo);
+            $("#state-avg2").text(stateInfo);
         };
         if (stateLower === "ar") {
             var stateInfo = response.BEAAPI.Results.Data[14].DataValue;
@@ -626,7 +626,7 @@ $("#compareCity").on("click", function (event) {
             myChart2.data.labels.push("AR")
             myChart2.data.datasets[0].data.push(specInfo);
             myChart2.update();
-            $("#state-avg").text(stateInfo);
+            $("#state-avg2").text(stateInfo);
         };
         if (stateLower === "ca") {
             var stateInfo = response.BEAAPI.Results.Data[17].DataValue;
@@ -635,7 +635,7 @@ $("#compareCity").on("click", function (event) {
             myChart2.data.labels.push("CA")
             myChart2.data.datasets[0].data.push(specInfo);
             myChart2.update();
-            $("#state-avg").text(stateInfo);
+            $("#state-avg2").text(stateInfo);
         };
         if (stateLower === "co") {
             var stateInfo = response.BEAAPI.Results.Data[20].DataValue;
@@ -644,7 +644,7 @@ $("#compareCity").on("click", function (event) {
             myChart2.data.labels.push("CO")
             myChart2.data.datasets[0].data.push(specInfo);
             myChart2.update();
-            $("#state-avg").text(stateInfo);
+            $("#state-avg2").text(stateInfo);
         };
         if (stateLower === "ct") {
             var stateInfo = response.BEAAPI.Results.Data[23].DataValue;
@@ -653,7 +653,7 @@ $("#compareCity").on("click", function (event) {
             myChart2.data.labels.push("CT")
             myChart2.data.datasets[0].data.push(specInfo);
             myChart2.update();
-            $("#state-avg").text(stateInfo);
+            $("#state-avg2").text(stateInfo);
         };
         if (stateLower === "de") {
             var stateInfo = response.BEAAPI.Results.Data[26].DataValue;
@@ -662,7 +662,7 @@ $("#compareCity").on("click", function (event) {
             myChart2.data.labels.push("DE")
             myChart2.data.datasets[0].data.push(specInfo);
             myChart2.update();
-            $("#state-avg").text(stateInfo);
+            $("#state-avg2").text(stateInfo);
         };
         if (stateLower === "dc") {
             var stateInfo = response.BEAAPI.Results.Data[29].DataValue;
@@ -671,7 +671,7 @@ $("#compareCity").on("click", function (event) {
             myChart2.data.labels.push("DC")
             myChart2.data.datasets[0].data.push(specInfo);
             myChart2.update();
-            $("#state-avg").text(stateInfo);
+            $("#state-avg2").text(stateInfo);
         };
         if (stateLower === "fl") {
             var stateInfo = response.BEAAPI.Results.Data[32].DataValue;
@@ -680,7 +680,7 @@ $("#compareCity").on("click", function (event) {
             myChart2.data.labels.push("FL")
             myChart2.data.datasets[0].data.push(specInfo);
             myChart2.update();
-            $("#state-avg").text(stateInfo);
+            $("#state-avg2").text(stateInfo);
         };
         if (stateLower === "ga") {
             var stateInfo = response.BEAAPI.Results.Data[35].DataValue;
@@ -689,7 +689,7 @@ $("#compareCity").on("click", function (event) {
             myChart2.data.labels.push("GA")
             myChart2.data.datasets[0].data.push(specInfo);
             myChart2.update();
-            $("#state-avg").text(stateInfo);
+            $("#state-avg2").text(stateInfo);
         };
         if (stateLower === "hi") {
             var stateInfo = response.BEAAPI.Results.Data[38].DataValue;
@@ -698,7 +698,7 @@ $("#compareCity").on("click", function (event) {
             myChart2.data.labels.push("HI")
             myChart2.data.datasets[0].data.push(specInfo);
             myChart2.update();
-            $("#state-avg").text(stateInfo);
+            $("#state-avg2").text(stateInfo);
         };
         if (stateLower === "id") {
             var stateInfo = response.BEAAPI.Results.Data[41].DataValue;
@@ -707,7 +707,7 @@ $("#compareCity").on("click", function (event) {
             myChart2.data.labels.push("ID")
             myChart2.data.datasets[0].data.push(specInfo);
             myChart2.update();
-            $("#state-avg").text(stateInfo);
+            $("#state-avg2").text(stateInfo);
         };
         if (stateLower === "il") {
             var stateInfo = response.BEAAPI.Results.Data[44].DataValue;
@@ -716,7 +716,7 @@ $("#compareCity").on("click", function (event) {
             myChart2.data.labels.push("IL")
             myChart2.data.datasets[0].data.push(specInfo);
             myChart2.update();
-            $("#state-avg").text(stateInfo);
+            $("#state-avg2").text(stateInfo);
         };
         if (stateLower === "in") {
             var stateInfo = response.BEAAPI.Results.Data[47].DataValue;
@@ -725,7 +725,7 @@ $("#compareCity").on("click", function (event) {
             myChart2.data.labels.push("IN")
             myChart2.data.datasets[0].data.push(specInfo);
             myChart2.update();
-            $("#state-avg").text(stateInfo);
+            $("#state-avg2").text(stateInfo);
         };
         if (stateLower === "ia") {
             var stateInfo = response.BEAAPI.Results.Data[50].DataValue;
@@ -734,7 +734,7 @@ $("#compareCity").on("click", function (event) {
             myChart2.data.labels.push("IA")
             myChart2.data.datasets[0].data.push(specInfo);
             myChart2.update();
-            $("#state-avg").text(stateInfo);
+            $("#state-avg2").text(stateInfo);
         };
         if (stateLower === "ks") {
             var stateInfo = response.BEAAPI.Results.Data[53].DataValue;
@@ -743,7 +743,7 @@ $("#compareCity").on("click", function (event) {
             myChart2.data.labels.push("KS")
             myChart2.data.datasets[0].data.push(specInfo);
             myChart2.update();
-            $("#state-avg").text(stateInfo);
+            $("#state-avg2").text(stateInfo);
         };
         if (stateLower === "ky") {
             var stateInfo = response.BEAAPI.Results.Data[56].DataValue;
@@ -752,7 +752,7 @@ $("#compareCity").on("click", function (event) {
             myChart2.data.labels.push("KY")
             myChart2.data.datasets[0].data.push(specInfo);
             myChart2.update();
-            $("#state-avg").text(stateInfo);
+            $("#state-avg2").text(stateInfo);
         };
         if (stateLower === "la") {
             var stateInfo = response.BEAAPI.Results.Data[59].DataValue;
@@ -761,7 +761,7 @@ $("#compareCity").on("click", function (event) {
             myChart2.data.labels.push("LA")
             myChart2.data.datasets[0].data.push(specInfo);
             myChart2.update();
-            $("#state-avg").text(stateInfo);
+            $("#state-avg2").text(stateInfo);
         };
         if (stateLower === "me") {
             var stateInfo = response.BEAAPI.Results.Data[62].DataValue;
@@ -770,7 +770,7 @@ $("#compareCity").on("click", function (event) {
             myChart2.data.labels.push("ME")
             myChart2.data.datasets[0].data.push(specInfo);
             myChart2.update();
-            $("#state-avg").text(stateInfo);
+            $("#state-avg2").text(stateInfo);
         };
         if (stateLower === "md") {
             var stateInfo = response.BEAAPI.Results.Data[65].DataValue;
@@ -779,7 +779,7 @@ $("#compareCity").on("click", function (event) {
             myChart2.data.labels.push("MD")
             myChart2.data.datasets[0].data.push(specInfo);
             myChart2.update();
-            $("#state-avg").text(stateInfo);
+            $("#state-avg2").text(stateInfo);
         };
         if (stateLower === "ma") {
             var stateInfo = response.BEAAPI.Results.Data[68].DataValue;
@@ -788,7 +788,7 @@ $("#compareCity").on("click", function (event) {
             myChart2.data.labels.push("MA")
             myChart2.data.datasets[0].data.push(specInfo);
             myChart2.update();
-            $("#state-avg").text(stateInfo);
+            $("#state-avg2").text(stateInfo);
         };
         if (stateLower === "mi") {
             var stateInfo = response.BEAAPI.Results.Data[71].DataValue;
@@ -797,7 +797,7 @@ $("#compareCity").on("click", function (event) {
             myChart2.data.labels.push("MI")
             myChart2.data.datasets[0].data.push(specInfo);
             myChart2.update();
-            $("#state-avg").text(stateInfo);
+            $("#state-avg2").text(stateInfo);
         };
         if (stateLower === "mn") {
             var stateInfo = response.BEAAPI.Results.Data[74].DataValue;
@@ -806,7 +806,7 @@ $("#compareCity").on("click", function (event) {
             myChart2.data.labels.push("MN")
             myChart2.data.datasets[0].data.push(specInfo);
             myChart2.update();
-            $("#state-avg").text(stateInfo);
+            $("#state-avg2").text(stateInfo);
         };
         if (stateLower === "ms") {
             var stateInfo = response.BEAAPI.Results.Data[77].DataValue;
@@ -815,7 +815,7 @@ $("#compareCity").on("click", function (event) {
             myChart2.data.labels.push("MS")
             myChart2.data.datasets[0].data.push(specInfo);
             myChart2.update();
-            $("#state-avg").text(stateInfo);
+            $("#state-avg2").text(stateInfo);
         };
         if (stateLower === "mo") {
             var stateInfo = response.BEAAPI.Results.Data[80].DataValue;
@@ -824,7 +824,7 @@ $("#compareCity").on("click", function (event) {
             myChart2.data.labels.push("MO")
             myChart2.data.datasets[0].data.push(specInfo);
             myChart2.update();
-            $("#state-avg").text(stateInfo);
+            $("#state-avg2").text(stateInfo);
         };
         if (stateLower === "mt") {
             var stateInfo = response.BEAAPI.Results.Data[83].DataValue;
@@ -833,7 +833,7 @@ $("#compareCity").on("click", function (event) {
             myChart2.data.labels.push("MT")
             myChart2.data.datasets[0].data.push(specInfo);
             myChart2.update();
-            $("#state-avg").text(stateInfo);
+            $("#state-avg2").text(stateInfo);
         };
         if (stateLower === "ne") {
             var stateInfo = response.BEAAPI.Results.Data[86].DataValue;
@@ -842,7 +842,7 @@ $("#compareCity").on("click", function (event) {
             myChart2.data.labels.push("NE")
             myChart2.data.datasets[0].data.push(specInfo);
             myChart2.update();
-            $("#state-avg").text(stateInfo);
+            $("#state-avg2").text(stateInfo);
         };
         if (stateLower === "nv") {
             var stateInfo = response.BEAAPI.Results.Data[89].DataValue;
@@ -851,7 +851,7 @@ $("#compareCity").on("click", function (event) {
             myChart2.data.labels.push("NV")
             myChart2.data.datasets[0].data.push(specInfo);
             myChart2.update();
-            $("#state-avg").text(stateInfo);
+            $("#state-avg2").text(stateInfo);
         };
         if (stateLower === "nh") {
             var stateInfo = response.BEAAPI.Results.Data[92].DataValue;
@@ -860,7 +860,7 @@ $("#compareCity").on("click", function (event) {
             myChart2.data.labels.push("NH")
             myChart2.data.datasets[0].data.push(specInfo);
             myChart2.update();
-            $("#state-avg").text(stateInfo);
+            $("#state-avg2").text(stateInfo);
         };
         if (stateLower === "nj") {
             var stateInfo = response.BEAAPI.Results.Data[95].DataValue;
@@ -869,7 +869,7 @@ $("#compareCity").on("click", function (event) {
             myChart2.data.labels.push("NJ")
             myChart2.data.datasets[0].data.push(specInfo);
             myChart2.update();
-            $("#state-avg").text(stateInfo);
+            $("#state-avg2").text(stateInfo);
         };
         if (stateLower === "nm") {
             var stateInfo = response.BEAAPI.Results.Data[98].DataValue;
@@ -878,7 +878,7 @@ $("#compareCity").on("click", function (event) {
             myChart2.data.labels.push("NM")
             myChart2.data.datasets[0].data.push(specInfo);
             myChart2.update();
-            $("#state-avg").text(stateInfo);
+            $("#state-avg2").text(stateInfo);
         };
         if (stateLower === "ny") {
             var stateInfo = response.BEAAPI.Results.Data[101].DataValue;
@@ -887,7 +887,7 @@ $("#compareCity").on("click", function (event) {
             myChart2.data.labels.push("NY")
             myChart2.data.datasets[0].data.push(specInfo);
             myChart2.update();
-            $("#state-avg").text(stateInfo);
+            $("#state-avg2").text(stateInfo);
         };
         if (stateLower === "nc") {
             var stateInfo = response.BEAAPI.Results.Data[104].DataValue;
@@ -896,7 +896,7 @@ $("#compareCity").on("click", function (event) {
             myChart2.data.labels.push("NC")
             myChart2.data.datasets[0].data.push(specInfo);
             myChart2.update();
-            $("#state-avg").text(stateInfo);
+            $("#state-avg2").text(stateInfo);
         };
         if (stateLower === "nd") {
             var stateInfo = response.BEAAPI.Results.Data[107].DataValue;
@@ -905,7 +905,7 @@ $("#compareCity").on("click", function (event) {
             myChart2.data.labels.push("ND")
             myChart2.data.datasets[0].data.push(specInfo);
             myChart2.update();
-            $("#state-avg").text(stateInfo);
+            $("#state-avg2").text(stateInfo);
         };
         if (stateLower === "oh") {
             var stateInfo = response.BEAAPI.Results.Data[110].DataValue;
@@ -914,7 +914,7 @@ $("#compareCity").on("click", function (event) {
             myChart2.data.labels.push("OH")
             myChart2.data.datasets[0].data.push(specInfo);
             myChart2.update();
-            $("#state-avg").text(stateInfo);
+            $("#state-avg2").text(stateInfo);
         };
         if (stateLower === "ok") {
             var stateInfo = response.BEAAPI.Results.Data[113].DataValue;
@@ -923,7 +923,7 @@ $("#compareCity").on("click", function (event) {
             myChart2.data.labels.push("OK")
             myChart2.data.datasets[0].data.push(specInfo);
             myChart2.update();
-            $("#state-avg").text(stateInfo);
+            $("#state-avg2").text(stateInfo);
         };
         if (stateLower === "or") {
             var stateInfo = response.BEAAPI.Results.Data[116].DataValue;
@@ -932,7 +932,7 @@ $("#compareCity").on("click", function (event) {
             myChart2.data.labels.push("OR")
             myChart2.data.datasets[0].data.push(specInfo);
             myChart2.update();
-            $("#state-avg").text(stateInfo);
+            $("#state-avg2").text(stateInfo);
         };
         if (stateLower === "pa") {
             var stateInfo = response.BEAAPI.Results.Data[119].DataValue;
@@ -941,7 +941,7 @@ $("#compareCity").on("click", function (event) {
             myChart2.data.labels.push("PA")
             myChart2.data.datasets[0].data.push(specInfo);
             myChart2.update();
-            $("#state-avg").text(stateInfo);
+            $("#state-avg2").text(stateInfo);
         };
         if (stateLower === "ri") {
             var stateInfo = response.BEAAPI.Results.Data[122].DataValue;
@@ -950,7 +950,7 @@ $("#compareCity").on("click", function (event) {
             myChart2.data.labels.push("RI")
             myChart2.data.datasets[0].data.push(specInfo);
             myChart2.update();
-            $("#state-avg").text(stateInfo);
+            $("#state-avg2").text(stateInfo);
         };
         if (stateLower === "sc") {
             var stateInfo = response.BEAAPI.Results.Data[125].DataValue;
@@ -959,7 +959,7 @@ $("#compareCity").on("click", function (event) {
             myChart2.data.labels.push("SC")
             myChart2.data.datasets[0].data.push(specInfo);
             myChart2.update();
-            $("#state-avg").text(stateInfo);
+            $("#state-avg2").text(stateInfo);
         };
         if (stateLower === "sd") {
             var stateInfo = response.BEAAPI.Results.Data[125].DataValue;
@@ -968,7 +968,7 @@ $("#compareCity").on("click", function (event) {
             myChart2.data.labels.push("SD")
             myChart2.data.datasets[0].data.push(specInfo);
             myChart2.update();
-            $("#state-avg").text(stateInfo);
+            $("#state-avg2").text(stateInfo);
         };
         if (stateLower === "tn") {
             var stateInfo = response.BEAAPI.Results.Data[128].DataValue;
@@ -977,7 +977,7 @@ $("#compareCity").on("click", function (event) {
             myChart2.data.labels.push("TN")
             myChart2.data.datasets[0].data.push(specInfo);
             myChart2.update();
-            $("#state-avg").text(stateInfo);
+            $("#state-avg2").text(stateInfo);
         };
         if (stateLower === "tx") {
             var stateInfo = response.BEAAPI.Results.Data[131].DataValue;
@@ -986,7 +986,7 @@ $("#compareCity").on("click", function (event) {
             myChart2.data.labels.push("TX")
             myChart2.data.datasets[0].data.push(specInfo);
             myChart2.update();
-            $("#state-avg").text(stateInfo);
+            $("#state-avg2").text(stateInfo);
         };
         if (stateLower === "ut") {
             var stateInfo = response.BEAAPI.Results.Data[134].DataValue;
@@ -995,7 +995,7 @@ $("#compareCity").on("click", function (event) {
             myChart2.data.labels.push("UT")
             myChart2.data.datasets[0].data.push(specInfo);
             myChart2.update();
-            $("#state-avg").text(stateInfo);
+            $("#state-avg2").text(stateInfo);
         };
         if (stateLower === "vt") {
             var stateInfo = response.BEAAPI.Results.Data[137].DataValue;
@@ -1004,7 +1004,7 @@ $("#compareCity").on("click", function (event) {
             myChart2.data.labels.push("VT")
             myChart2.data.datasets[0].data.push(specInfo);
             myChart2.update();
-            $("#state-avg").text(stateInfo);
+            $("#state-avg2").text(stateInfo);
         };
         if (stateLower === "va") {
             var stateInfo = response.BEAAPI.Results.Data[140].DataValue;
@@ -1013,7 +1013,7 @@ $("#compareCity").on("click", function (event) {
             myChart2.data.labels.push("VA")
             myChart2.data.datasets[0].data.push(specInfo);
             myChart2.update();
-            $("#state-avg").text(stateInfo);
+            $("#state-avg2").text(stateInfo);
         };
         if (stateLower === "wa") {
             var stateInfo = response.BEAAPI.Results.Data[143].DataValue;
@@ -1022,7 +1022,7 @@ $("#compareCity").on("click", function (event) {
             myChart2.data.labels.push("WA")
             myChart2.data.datasets[0].data.push(specInfo);
             myChart2.update();
-            $("#state-avg").text(stateInfo);
+            $("#state-avg2").text(stateInfo);
         };
         if (stateLower === "wv") {
             var stateInfo = response.BEAAPI.Results.Data[146].DataValue;
@@ -1031,7 +1031,7 @@ $("#compareCity").on("click", function (event) {
             myChart2.data.labels.push("WV")
             myChart2.data.datasets[0].data.push(specInfo);
             myChart2.update();
-            $("#state-avg").text(stateInfo);
+            $("#state-avg2").text(stateInfo);
         };
         if (stateLower === "wi") {
             var stateInfo = response.BEAAPI.Results.Data[149].DataValue;
@@ -1040,7 +1040,7 @@ $("#compareCity").on("click", function (event) {
             myChart2.data.labels.push("WI")
             myChart2.data.datasets[0].data.push(specInfo);
             myChart2.update();
-            $("#state-avg").text(stateInfo);
+            $("#state-avg2").text(stateInfo);
         };
         if (stateLower === "wy") {
             var stateInfo = response.BEAAPI.Results.Data[152].DataValue;
@@ -1049,7 +1049,7 @@ $("#compareCity").on("click", function (event) {
             myChart2.data.labels.push("WY")
             myChart2.data.datasets[0].data.push(specInfo);
             myChart2.update();
-            $("#state-avg").text(stateInfo);            
+            $("#state-avg2").text(stateInfo);            
         };
     });
 });

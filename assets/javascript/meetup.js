@@ -53,7 +53,8 @@ $(document).ready(function(){
 
     $("#compareCity").on("click", function(event){
       event.preventDefault();
-      $("#meetupData").append("<h5 class='card-title'>Meetup Data</h5>");
+      $("#meetupData2").empty();
+      $("#meetupData2").append("<h5 class='card-title'>Meetup Data</h5>");
       // gets data from inputs
       var city = $("#city").val().trim();
       var state = $("#state").val().trim();
