@@ -23,10 +23,6 @@ $("#searchCity").on("click", function (event) {
 	state = $("#state").val().trim(); //Pulls in State
 	budget = parseInt($("#budget").val());    //Pulls in home budget
 
-	$("#city").text("");
-	$("#state").text("");
-	$("#budget").text("");
-
 	var queryURL = "http://www.zillow.com/webservice/GetRegionChildren.htm?zws-id=" + apiKey + "&state=" + state + "&city=" + city + "&childtype=neighborhood";
 
 	queryURL = proxyURL + queryURL;
@@ -59,7 +55,6 @@ $("#compareCity").on("click", function (event) {
 	budget = parseInt($("#budget").val());    //Pulls in home budget
 
 	$("#city").text("");
-	$("#state").text("");
 	$("#budget").text("");
 
 	compareButton = 1;

@@ -15,7 +15,8 @@ div#charts{
     padding-left: 38%;
 }
 
-#houseData,#economicData,#meetupData,#weatherData{
+#houseData,#economicData,#meetupData,#weatherData,
+#houseData2,#economicData2,#meetupData2,#weatherData2{
     max-height: 600px;
     overflow-y: scroll;
     border-style: solid;
@@ -24,4 +25,20 @@ div#charts{
     padding: 0;
 }
 
-.form-group{ margin:0%; width: 150px; display: inline-block; margin-right: 1%; margin-left: 1%;}
+.form-group{
+    margin:0%;
+    width: 150px;
+    display: inline-block;
+    margin-right: 1%;
+    margin-left: 1%;
+}
+
+#meetupData img {
+    height: 200px;
+    width: 100%;
+}
+#meetupData2 img {
+    height: 200px;
+    width: 100%;
+}
+
