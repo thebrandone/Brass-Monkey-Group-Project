@@ -6,13 +6,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>The Perfect Fit</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap CSS and JS Libraries -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <!-- Chart Library -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0/dist/Chart.min.js"></script>
+    <!-- Firebase Library -->
     <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase.js"></script>
+    <!-- Moment Library -->
     <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+    <!-- CSS File -->
     <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css">
 </head>
 
@@ -25,6 +30,8 @@
     Home Budget:
     <input id="budget">
     <button id="searchCity">Search City</button>
+    <button id="compareCity">Add Second City</button>
+    <button id="closeCompare">Close Second City</button>
     <br>
 
     <div class="jumbotron cityBlock">
@@ -84,10 +91,66 @@
         </div>
     </div>
 
-    <script src="assets/javascript/housing.js"></script>
-    <script src="assets/javascript/meetup.js"></script>
-    <script src="assets/javascript/weather-data.js"></script>
+    <div class="jumbotron" id="compareBlock">
+        <div class="row">
+            <div class="col-3" id="houseData2">
+                <div class="card">
+                    <div id="houseCard2" class="card-body">
+                        <h5 class="card-title">Housing Data</h5>
+                        <p class="card-text"></p>
+                        <table class="table">
+                            <thead class="thead-dark">
+                                <tr id="titleData">
+                                    <th scope="col">Neighborhood</th>
+                                    <th scope="col">Average Price</th>
+                                </tr>
+                            </thead>
+                            <tbody id="houseRow2">
+                                <div id="tempInfo2"></div>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="col-3" id="economicData2">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Economic Data</h5>
+                        <canvas id="income-chart" width="30" height="40" aria-label="Average Income" role="img"></canvas>
+                        <p id="card-text">Data Here: </p>
+                        <p id="usa-data">USA Avg. Income: </p>
+                        <p id="state-data">State Avg. Income: </p>
+                    </div>
+                </div>
+            </div>
 
+            <div class="col-3">
+                <div class="card">
+                    <div class="card-body" id="meetupData2">
+                        <h5 class="card-title">Meetup Data</h5>
+
+                        <p class="card-text"></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-3" id="weatherData2">
+                <div class="card">
+                        <h5 class="card-title">Weather Data</h5>
+                        <div id="date"></div>
+                        <div id="temp"></div>
+                        <div id="humidity"></div>
+                        <div id="description"></div>
+                        <div id="wind"></div>
+                        <br>
+                        <a id="map"></a>
+            </div>
+        </div>
+    </div>
+        <script src="assets/javascript/meetup.js"></script>
+        <script src="assets/javascript/weather-data.js"></script>
+        <script src="assets/javascript/housing.js"></script>
+        <script src="assets/javascript/bea.js"></script>
 </body>
 
-</html> 
+</html>

@@ -23,3 +23,5 @@ div#charts{
     border-color: black;
     padding: 0;
 }
+
+.form-group{ margin:0%; width: 150px; display: inline-block; margin-right: 1%; margin-left: 1%;}
