@@ -19,13 +19,7 @@ $(document).ready(function () {
             states.push(testState);
         }
 
-        robbiesState = new State("Im a bitch",69000);
-        states.push(robbiesState);
-
-        
     })
-
-    
 
     var ctx = document.getElementById('income-chart');
     var myChart = new Chart(ctx, {
@@ -62,14 +56,11 @@ $(document).ready(function () {
         }
     });
     $("#income-chart").append(myChart);
+    function empty(){
+        myChart.data.datasets[0].data = [];
+        myChart.data.labels = [];
+    }
 
-
-
-
-
-    
-        
- 
 
 var states = [];
 
@@ -81,18 +72,12 @@ class State {
 }
 
 $("#searchCity").on("click", function (event) {
-
-    // var specInfo = stateInfo.replace(',', '');
-    // specInfo = parseInt(specInfo);
-
+    event.preventDefault();
+    empty();
     myChart.data.datasets[0].data.push(parseInt(states[0].income.replace(',', '')));
     myChart.data.labels.push(states[0].name)
-
-    
-
-    console.log("Hi Robbie");
-    event.preventDefault();
-    var state = $("#state").val().trim();
+    var state = $("#state").attr("data-full").trim();
+    console.log(state);
     var stateLower = state.toLowerCase();
     console.log(stateLower);
 
@@ -103,10 +88,8 @@ $("#searchCity").on("click", function (event) {
             myChart.data.labels.push(states[i].name)
         }
     }
+    myChart.update();
 
-    // console.log(state);
-    // console.log(stateLower);
-    // console.log(states[states.length -1].income);
 
 })
 
