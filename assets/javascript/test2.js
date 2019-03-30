@@ -45,19 +45,12 @@ $(document).ready(function () {
     });
     $("#income-chart").append(myChart);
 
-    function empty(){
-        myChart.data.datasets[0].data = [];
-        myChart.data.labels = [];
-    }
-
 
 
 
 
     $("#searchCity").on("click", function (event) {
-
         event.preventDefault();
-        empty();
         var state = $("#state").val().trim();
         var stateLower = state.toLowerCase();
         console.log(state);
@@ -79,8 +72,9 @@ $(document).ready(function () {
             myChart.data.datasets[0].data.push(avgInfo);
             
             console.log("USA", usaIncome);
+            $("#usa-data").append(usaIncome);
 
-            if (stateLower === "al") {
+            if (stateLower === "alabama") {
                 console.log("Alabama ", response.BEAAPI.Results.Data[5].DataValue)
                 
                 var stateInfo = response.BEAAPI.Results.Data[5].DataValue;
@@ -92,8 +86,10 @@ $(document).ready(function () {
                 myChart.update();
 
                 console.log(stateInfo);
+                $("#state-data").append(stateInfo);
+              
             };
-            if (stateLower === "ak") {
+            if (stateLower === "alaska") {
                 console.log("Alaska ", response.BEAAPI.Results.Data[8].DataValue)
                 var stateInfo = response.BEAAPI.Results.Data[8].DataValue;
                 var specInfo = stateInfo.replace(',', '');
@@ -104,8 +100,9 @@ $(document).ready(function () {
                 myChart.update();
 
                 console.log(stateInfo);
+                $("#state-data").append(stateInfo);
             };
-            if (stateLower === "az") {
+            if (stateLower === "arizona") {
                 console.log("Arizona ", response.BEAAPI.Results.Data[11].DataValue)
                 var stateInfo = response.BEAAPI.Results.Data[11].DataValue;
                 var specInfo = stateInfo.replace(',', '');
@@ -116,8 +113,9 @@ $(document).ready(function () {
                 myChart.update();
 
                 console.log(stateInfo);
+                $("#state-data").append(stateInfo);
             };
-            if (stateLower === "ak") {
+            if (stateLower === "arkansas") {
                 console.log("Arkansas ", response.BEAAPI.Results.Data[14].DataValue)
                 var stateInfo = response.BEAAPI.Results.Data[14].DataValue;
                 var specInfo = stateInfo.replace(',', '');
@@ -128,8 +126,9 @@ $(document).ready(function () {
                 myChart.update();
 
                 console.log(stateInfo);
+                $("#state-data").append(stateInfo);
             };
-            if (stateLower === "ca") {
+            if (stateLower === "california") {
                 console.log("California ", response.BEAAPI.Results.Data[17].DataValue)
                 var stateInfo = response.BEAAPI.Results.Data[17].DataValue;
                 var specInfo = stateInfo.replace(',', '');
@@ -140,8 +139,9 @@ $(document).ready(function () {
                 myChart.update();
 
                 console.log(stateInfo);
+                $("#state-data").append(stateInfo);
             };
-            if (stateLower === "co") {
+            if (stateLower === "colorado") {
                 console.log("Colorado ", response.BEAAPI.Results.Data[20].DataValue)
                 var stateInfo = response.BEAAPI.Results.Data[20].DataValue;
                 var specInfo = stateInfo.replace(',', '');
@@ -152,8 +152,9 @@ $(document).ready(function () {
                 myChart.update();
 
                 console.log(stateInfo);
+                $("#state-data").append(stateInfo);
             };
-            if (stateLower === "ct") {
+            if (stateLower === "connecticut") {
                 console.log("Connecticut ", response.BEAAPI.Results.Data[23].DataValue)
                 var stateInfo = response.BEAAPI.Results.Data[23].DataValue;
                 var specInfo = stateInfo.replace(',', '');
@@ -164,8 +165,9 @@ $(document).ready(function () {
                 myChart.update();
 
                 console.log(stateInfo);
+                $("#state-data").append(stateInfo);
             };
-            if (stateLower === "de") {
+            if (stateLower === "delaware") {
                 console.log("Delaware ", response.BEAAPI.Results.Data[26].DataValue)
                 var stateInfo = response.BEAAPI.Results.Data[26].DataValue;
                 var specInfo = stateInfo.replace(',', '');
@@ -176,8 +178,9 @@ $(document).ready(function () {
                 myChart.update();
 
                 console.log(stateInfo);
+                $("#state-data").append(stateInfo);
             };
-            if (stateLower === "dc") {
+            if (stateLower === "district of columbia") {
                 console.log("District of Columbia ", response.BEAAPI.Results.Data[29].DataValue)
                 var stateInfo = response.BEAAPI.Results.Data[29].DataValue;
                 var specInfo = stateInfo.replace(',', '');
@@ -188,8 +191,9 @@ $(document).ready(function () {
                 myChart.update();
 
                 console.log(stateInfo);
+                $("#state-data").append(stateInfo);
             };
-            if (stateLower === "fl") {
+            if (stateLower === "florida") {
                 console.log("Florida ", response.BEAAPI.Results.Data[32].DataValue)
                 var stateInfo = response.BEAAPI.Results.Data[32].DataValue;
                 var specInfo = stateInfo.replace(',', '');
@@ -200,8 +204,9 @@ $(document).ready(function () {
                 myChart.update();
 
                 console.log(stateInfo);
+                $("#state-data").append(stateInfo);
             };
-            if (stateLower === "ga") {
+            if (stateLower === "georgia") {
                 console.log("Georgia ", response.BEAAPI.Results.Data[35].DataValue)
                 var stateInfo = response.BEAAPI.Results.Data[35].DataValue;
                 var specInfo = stateInfo.replace(',', '');
@@ -212,8 +217,9 @@ $(document).ready(function () {
                 myChart.update();
 
                 console.log(stateInfo);
+                $("#state-data").append(stateInfo);
             };
-            if (stateLower === "hi") {
+            if (stateLower === "hawaii") {
                 console.log("Hawaii ", response.BEAAPI.Results.Data[38].DataValue)
                 var stateInfo = response.BEAAPI.Results.Data[38].DataValue;
                 var specInfo = stateInfo.replace(',', '');
@@ -224,8 +230,9 @@ $(document).ready(function () {
                 myChart.update();
 
                 console.log(stateInfo);
+                $("#state-data").append(stateInfo);
             };
-            if (stateLower === "id") {
+            if (stateLower === "idaho") {
                 console.log("Idaho ", response.BEAAPI.Results.Data[41].DataValue)
                 var stateInfo = response.BEAAPI.Results.Data[41].DataValue;
                 var specInfo = stateInfo.replace(',', '');
@@ -236,8 +243,9 @@ $(document).ready(function () {
                 myChart.update();
 
                 console.log(stateInfo);
+                $("#state-data").append(stateInfo);
             };
-            if (stateLower === "il") {
+            if (stateLower === "illinois") {
                 console.log("Illinois ", response.BEAAPI.Results.Data[44].DataValue)
                 var stateInfo = response.BEAAPI.Results.Data[44].DataValue;
                 var specInfo = stateInfo.replace(',', '');
@@ -248,8 +256,9 @@ $(document).ready(function () {
                 myChart.update();
 
                 console.log(stateInfo);
+                $("#state-data").append(stateInfo);
             };
-            if (stateLower === "in") {
+            if (stateLower === "indiana") {
                 console.log("Indiana ", response.BEAAPI.Results.Data[47].DataValue)
                 var stateInfo = response.BEAAPI.Results.Data[47].DataValue;
                 var specInfo = stateInfo.replace(',', '');
@@ -260,8 +269,9 @@ $(document).ready(function () {
                 myChart.update();
 
                 console.log(stateInfo);
+                $("#state-data").append(stateInfo);
             };
-            if (stateLower === "ia") {
+            if (stateLower === "iowa") {
                 console.log("Iowa ", response.BEAAPI.Results.Data[50].DataValue)
                 var stateInfo = response.BEAAPI.Results.Data[50].DataValue;
                 var specInfo = stateInfo.replace(',', '');
@@ -272,20 +282,22 @@ $(document).ready(function () {
                 myChart.update();
 
                 console.log(stateInfo);
+                $("#state-data").append(stateInfo);
             };
-            if (stateLower === "ks") {
+            if (stateLower === "kansas") {
                 console.log("Kansas ", response.BEAAPI.Results.Data[53].DataValue)
                 var stateInfo = response.BEAAPI.Results.Data[53].DataValue;
                 var specInfo = stateInfo.replace(',', '');
                 console.log(specInfo)
                 specInfo = parseInt(specInfo);
-                myChart.data.labels.push("KS")
+                myChart.data.labels.push("KA")
                 myChart.data.datasets[0].data.push(specInfo);
                 myChart.update();
 
                 console.log(stateInfo);
+                $("#state-data").append(stateInfo);
             };
-            if (stateLower === "ky") {
+            if (stateLower === "kentucky") {
                 console.log("Kentucky ", response.BEAAPI.Results.Data[56].DataValue)
                 var stateInfo = response.BEAAPI.Results.Data[56].DataValue;
                 var specInfo = stateInfo.replace(',', '');
@@ -296,8 +308,9 @@ $(document).ready(function () {
                 myChart.update();
 
                 console.log(stateInfo);
+                $("#state-data").append(stateInfo);
             };
-            if (stateLower === "la") {
+            if (stateLower === "louisiana") {
                 console.log("Louisiana ", response.BEAAPI.Results.Data[59].DataValue)
                 var stateInfo = response.BEAAPI.Results.Data[59].DataValue;
                 var specInfo = stateInfo.replace(',', '');
@@ -308,8 +321,9 @@ $(document).ready(function () {
                 myChart.update();
 
                 console.log(stateInfo);
+                $("#state-data").append(stateInfo);
             };
-            if (stateLower === "me") {
+            if (stateLower === "maine") {
                 console.log("Maine ", response.BEAAPI.Results.Data[62].DataValue)
                 var stateInfo = response.BEAAPI.Results.Data[62].DataValue;
                 var specInfo = stateInfo.replace(',', '');
@@ -320,8 +334,9 @@ $(document).ready(function () {
                 myChart.update();
 
                 console.log(stateInfo);
+                $("#state-data").append(stateInfo);
             };
-            if (stateLower === "md") {
+            if (stateLower === "maryland") {
                 console.log("Maryland ", response.BEAAPI.Results.Data[65].DataValue)
                 var stateInfo = response.BEAAPI.Results.Data[65].DataValue;
                 var specInfo = stateInfo.replace(',', '');
@@ -332,8 +347,9 @@ $(document).ready(function () {
                 myChart.update();
 
                 console.log(stateInfo);
+                $("#state-data").append(stateInfo);
             };
-            if (stateLower === "ma") {
+            if (stateLower === "massachusetts") {
                 console.log("Massachuesetts ", response.BEAAPI.Results.Data[68].DataValue)
                 var stateInfo = response.BEAAPI.Results.Data[68].DataValue;
                 var specInfo = stateInfo.replace(',', '');
@@ -344,8 +360,9 @@ $(document).ready(function () {
                 myChart.update();
 
                 console.log(stateInfo);
+                $("#state-data").append(stateInfo);
             };
-            if (stateLower === "mi") {
+            if (stateLower === "michigan") {
                 console.log("Michigan ", response.BEAAPI.Results.Data[71].DataValue)
                 var stateInfo = response.BEAAPI.Results.Data[71].DataValue;
                 var specInfo = stateInfo.replace(',', '');
@@ -356,8 +373,9 @@ $(document).ready(function () {
                 myChart.update();
 
                 console.log(stateInfo);
+                $("#state-data").append(stateInfo);
             };
-            if (stateLower === "mn") {
+            if (stateLower === "minnesota") {
                 console.log("Minnesota ", response.BEAAPI.Results.Data[74].DataValue)
                 var stateInfo = response.BEAAPI.Results.Data[74].DataValue;
                 var specInfo = stateInfo.replace(',', '');
@@ -368,8 +386,9 @@ $(document).ready(function () {
                 myChart.update();
 
                 console.log(stateInfo);
+                $("#state-data").append(stateInfo);
             };
-            if (stateLower === "ms") {
+            if (stateLower === "mississippi") {
                 console.log("Mississippi ", response.BEAAPI.Results.Data[77].DataValue)
                 var stateInfo = response.BEAAPI.Results.Data[77].DataValue;
                 var specInfo = stateInfo.replace(',', '');
@@ -380,8 +399,9 @@ $(document).ready(function () {
                 myChart.update();
 
                 console.log(stateInfo);
+                $("#state-data").append(stateInfo);
             };
-            if (stateLower === "mo") {
+            if (stateLower === "missouri") {
                 console.log("Missouri ", response.BEAAPI.Results.Data[80].DataValue)
                 var stateInfo = response.BEAAPI.Results.Data[80].DataValue;
                 var specInfo = stateInfo.replace(',', '');
@@ -392,8 +412,9 @@ $(document).ready(function () {
                 myChart.update();
 
                 console.log(stateInfo);
+                $("#state-data").append(stateInfo);
             };
-            if (stateLower === "mt") {
+            if (stateLower === "montana") {
                 console.log("Montana ", response.BEAAPI.Results.Data[83].DataValue)
                 var stateInfo = response.BEAAPI.Results.Data[83].DataValue;
                 var specInfo = stateInfo.replace(',', '');
@@ -404,8 +425,9 @@ $(document).ready(function () {
                 myChart.update();
 
                 console.log(stateInfo);
+                $("#state-data").append(stateInfo);
             };
-            if (stateLower === "ne") {
+            if (stateLower === "nebraska") {
                 console.log("Nebraska ", response.BEAAPI.Results.Data[86].DataValue)
                 var stateInfo = response.BEAAPI.Results.Data[86].DataValue;
                 var specInfo = stateInfo.replace(',', '');
@@ -416,8 +438,9 @@ $(document).ready(function () {
                 myChart.update();
 
                 console.log(stateInfo);
+                $("#state-data").append(stateInfo);
             };
-            if (stateLower === "nv") {
+            if (stateLower === "nevada") {
                 console.log("Nevada ", response.BEAAPI.Results.Data[89].DataValue)
                 var stateInfo = response.BEAAPI.Results.Data[89].DataValue;
                 var specInfo = stateInfo.replace(',', '');
@@ -428,8 +451,9 @@ $(document).ready(function () {
                 myChart.update();
 
                 console.log(stateInfo);
+                $("#state-data").append(stateInfo);
             };
-            if (stateLower === "nh") {
+            if (stateLower === "new hampshire") {
                 console.log("New Hampshire ", response.BEAAPI.Results.Data[92].DataValue)
                 var stateInfo = response.BEAAPI.Results.Data[92].DataValue;
                 var specInfo = stateInfo.replace(',', '');
@@ -440,8 +464,9 @@ $(document).ready(function () {
                 myChart.update();
 
                 console.log(stateInfo);
+                $("#state-data").append(stateInfo);
             };
-            if (stateLower === "nj") {
+            if (stateLower === "new jersey") {
                 console.log("New Jersey ", response.BEAAPI.Results.Data[95].DataValue)
                 var stateInfo = response.BEAAPI.Results.Data[95].DataValue;
                 var specInfo = stateInfo.replace(',', '');
@@ -452,8 +477,9 @@ $(document).ready(function () {
                 myChart.update();
 
                 console.log(stateInfo);
+                $("#state-data").append(stateInfo);
             };
-            if (stateLower === "nm") {
+            if (stateLower === "new mexico") {
                 console.log("New Mexico ", response.BEAAPI.Results.Data[98].DataValue)
                 var stateInfo = response.BEAAPI.Results.Data[98].DataValue;
                 var specInfo = stateInfo.replace(',', '');
@@ -464,8 +490,9 @@ $(document).ready(function () {
                 myChart.update();
 
                 console.log(stateInfo);
+                $("#state-data").append(stateInfo);
             };
-            if (stateLower === "ny") {
+            if (stateLower === "new york") {
                 console.log("New York ", response.BEAAPI.Results.Data[101].DataValue)
                 var stateInfo = response.BEAAPI.Results.Data[101].DataValue;
                 var specInfo = stateInfo.replace(',', '');
@@ -476,8 +503,9 @@ $(document).ready(function () {
                 myChart.update();
 
                 console.log(stateInfo);
+                $("#state-data").append(stateInfo);
             };
-            if (stateLower === "nc") {
+            if (stateLower === "north carolina") {
                 console.log("North Carolina ", response.BEAAPI.Results.Data[104].DataValue)
                 var stateInfo = response.BEAAPI.Results.Data[104].DataValue;
                 var specInfo = stateInfo.replace(',', '');
@@ -488,8 +516,9 @@ $(document).ready(function () {
                 myChart.update();
 
                 console.log(stateInfo);
+                $("#state-data").append(stateInfo);
             };
-            if (stateLower === "nd") {
+            if (stateLower === "north dakota") {
                 console.log("North Dakota ", response.BEAAPI.Results.Data[107].DataValue)
                 var stateInfo = response.BEAAPI.Results.Data[107].DataValue;
                 var specInfo = stateInfo.replace(',', '');
@@ -500,8 +529,9 @@ $(document).ready(function () {
                 myChart.update();
 
                 console.log(stateInfo);
+                $("#state-data").append(stateInfo);
             };
-            if (stateLower === "oh") {
+            if (stateLower === "ohio") {
                 console.log("Ohio ", response.BEAAPI.Results.Data[110].DataValue)
                 var stateInfo = response.BEAAPI.Results.Data[110].DataValue;
                 var specInfo = stateInfo.replace(',', '');
@@ -512,8 +542,9 @@ $(document).ready(function () {
                 myChart.update();
 
                 console.log(stateInfo);
+                $("#state-data").append(stateInfo);
             };
-            if (stateLower === "ok") {
+            if (stateLower === "oklahoma") {
                 console.log("Oklahoma ", response.BEAAPI.Results.Data[113].DataValue)
                 var stateInfo = response.BEAAPI.Results.Data[113].DataValue;
                 var specInfo = stateInfo.replace(',', '');
@@ -524,8 +555,9 @@ $(document).ready(function () {
                 myChart.update();
 
                 console.log(stateInfo);
+                $("#state-data").append(stateInfo);
             };
-            if (stateLower === "or") {
+            if (stateLower === "oregon") {
                 console.log("Oregon ", response.BEAAPI.Results.Data[116].DataValue)
                 var stateInfo = response.BEAAPI.Results.Data[116].DataValue;
                 var specInfo = stateInfo.replace(',', '');
@@ -536,8 +568,9 @@ $(document).ready(function () {
                 myChart.update();
 
                 console.log(stateInfo);
+                $("#state-data").append(stateInfo);
             };
-            if (stateLower === "pa") {
+            if (stateLower === "pennsylvania") {
                 console.log("Pennsylvania ", response.BEAAPI.Results.Data[119].DataValue)
                 var stateInfo = response.BEAAPI.Results.Data[119].DataValue;
                 var specInfo = stateInfo.replace(',', '');
@@ -548,8 +581,9 @@ $(document).ready(function () {
                 myChart.update();
 
                 console.log(stateInfo);
+                $("#state-data").append(stateInfo);
             };
-            if (stateLower === "ri") {
+            if (stateLower === "rhode island") {
                 console.log("Rhode Island ", response.BEAAPI.Results.Data[122].DataValue)
                 var stateInfo = response.BEAAPI.Results.Data[122].DataValue;
                 var specInfo = stateInfo.replace(',', '');
@@ -560,8 +594,9 @@ $(document).ready(function () {
                 myChart.update();
 
                 console.log(stateInfo);
+                $("#state-data").append(stateInfo);
             };
-            if (stateLower === "sc") {
+            if (stateLower === "south carolina") {
                 console.log("South Carolina ", response.BEAAPI.Results.Data[125].DataValue)
                 var stateInfo = response.BEAAPI.Results.Data[125].DataValue;
                 var specInfo = stateInfo.replace(',', '');
@@ -572,20 +607,9 @@ $(document).ready(function () {
                 myChart.update();
 
                 console.log(stateInfo);
+                $("#state-data").append(stateInfo);
             };
-            if (stateLower === "sd") {
-                console.log("South Dakota ", response.BEAAPI.Results.Data[125].DataValue)
-                var stateInfo = response.BEAAPI.Results.Data[125].DataValue;
-                var specInfo = stateInfo.replace(',', '');
-                console.log(specInfo)
-                specInfo = parseInt(specInfo);
-                myChart.data.labels.push("SD")
-                myChart.data.datasets[0].data.push(specInfo);
-                myChart.update();
-
-                console.log(stateInfo);
-            };
-            if (stateLower === "tn") {
+            if (stateLower === "tennessee") {
                 console.log("Tennessee ", response.BEAAPI.Results.Data[128].DataValue)
                 var stateInfo = response.BEAAPI.Results.Data[128].DataValue;
                 var specInfo = stateInfo.replace(',', '');
@@ -596,8 +620,9 @@ $(document).ready(function () {
                 myChart.update();
 
                 console.log(stateInfo);
+                $("#state-data").append(stateInfo);
             };
-            if (stateLower === "tx") {
+            if (stateLower === "texas") {
                 console.log("Texas ", response.BEAAPI.Results.Data[131].DataValue)
                 var stateInfo = response.BEAAPI.Results.Data[131].DataValue;
                 var specInfo = stateInfo.replace(',', '');
@@ -608,8 +633,9 @@ $(document).ready(function () {
                 myChart.update();
 
                 console.log(stateInfo);
+                $("#state-data").append(stateInfo);
             };
-            if (stateLower === "ut") {
+            if (stateLower === "utah") {
                 console.log("Utah ", response.BEAAPI.Results.Data[134].DataValue)
                 var stateInfo = response.BEAAPI.Results.Data[134].DataValue;
                 var specInfo = stateInfo.replace(',', '');
@@ -620,8 +646,9 @@ $(document).ready(function () {
                 myChart.update();
 
                 console.log(stateInfo);
+                $("#state-data").append(stateInfo);
             };
-            if (stateLower === "vt") {
+            if (stateLower === "vermont") {
                 console.log("Vermont ", response.BEAAPI.Results.Data[137].DataValue)
                 var stateInfo = response.BEAAPI.Results.Data[137].DataValue;
                 var specInfo = stateInfo.replace(',', '');
@@ -632,8 +659,9 @@ $(document).ready(function () {
                 myChart.update();
 
                 console.log(stateInfo);
+                $("#state-data").append(stateInfo);
             };
-            if (stateLower === "va") {
+            if (stateLower === "virginia") {
                 console.log("Virginia ", response.BEAAPI.Results.Data[140].DataValue)
                 var stateInfo = response.BEAAPI.Results.Data[140].DataValue;
                 var specInfo = stateInfo.replace(',', '');
@@ -644,8 +672,9 @@ $(document).ready(function () {
                 myChart.update();
 
                 console.log(stateInfo);
+                $("#state-data").append(stateInfo);
             };
-            if (stateLower === "wa") {
+            if (stateLower === "washington") {
                 console.log("Washington ", response.BEAAPI.Results.Data[143].DataValue)
                 var stateInfo = response.BEAAPI.Results.Data[143].DataValue;
                 var specInfo = stateInfo.replace(',', '');
@@ -656,8 +685,9 @@ $(document).ready(function () {
                 myChart.update();
 
                 console.log(stateInfo);
+                $("#state-data").append(stateInfo);
             };
-            if (stateLower === "wv") {
+            if (stateLower === "west virginia") {
                 console.log("West Virginia ", response.BEAAPI.Results.Data[146].DataValue)
                 var stateInfo = response.BEAAPI.Results.Data[146].DataValue;
                 var specInfo = stateInfo.replace(',', '');
@@ -668,8 +698,9 @@ $(document).ready(function () {
                 myChart.update();
 
                 console.log(stateInfo);
+                $("#state-data").append(stateInfo);
             };
-            if (stateLower === "wi") {
+            if (stateLower === "wisconsin") {
                 console.log("Wisconsin ", response.BEAAPI.Results.Data[149].DataValue)
                 var stateInfo = response.BEAAPI.Results.Data[149].DataValue;
                 var specInfo = stateInfo.replace(',', '');
@@ -680,8 +711,9 @@ $(document).ready(function () {
                 myChart.update();
 
                 console.log(stateInfo);
+                $("#state-data").append(stateInfo);
             };
-            if (stateLower === "wy") {
+            if (stateLower === "wyoming") {
                 console.log("Wyoming ", response.BEAAPI.Results.Data[152].DataValue)
                 var stateInfo = response.BEAAPI.Results.Data[152].DataValue;
                 var specInfo = stateInfo.replace(',', '');
@@ -692,7 +724,7 @@ $(document).ready(function () {
                 myChart.update();
 
                 console.log(stateInfo);
-                
+                $("#state-data").append(stateInfo);
             };
 
         });

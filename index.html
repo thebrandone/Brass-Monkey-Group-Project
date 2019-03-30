@@ -6,14 +6,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>The Perfect Fit</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"          integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0/dist/Chart.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0/dist/Chart.min.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase.js"></script>
-    <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
-    <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css">
+    <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>-->
+    <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css"> 
 </head>
 
 <body>
@@ -21,7 +27,117 @@
     City:
     <input id="city">
     State:
-    <input id="state">
+    <div class="form-group row">
+        <div class="col-xs-1">
+          <label for="state"></label>
+          <select class="form-control" id="state">
+            <option>AL</option>
+            <option>AK</option>
+            <option>AZ</option>
+            <option>AR</option>
+            <option>CA</option>
+            <option>CO</option>
+            <option>CT</option>
+            <option>DE</option>
+            <option>FL</option>
+            <option>GA</option>
+            <option>HI</option>
+            <option>ID</option>
+            <option>IL</option>
+            <option>IN</option>
+            <option>IA</option>
+            <option>KS</option>
+            <option>KY</option>
+            <option>LA</option>
+            <option>ME</option>
+            <option>MD</option>
+            <option>MA</option>
+            <option>MI</option>
+            <option>MN</option>
+            <option>MS</option>
+            <option>MO</option>
+            <option>MT</option>
+            <option>NE</option>
+            <option>NV</option>
+            <option>NH</option>
+            <option>NJ</option>
+            <option>NM</option>
+            <option>NY</option>
+            <option>NC</option>
+            <option>ND</option>
+            <option>OH</option>
+            <option>OK</option>
+            <option>OR</option>
+            <option>PA</option>
+            <option>RI</option>
+            <option>SC</option>
+            <option>SD</option>
+            <option>TN</option>
+            <option>TX</option>
+            <option>UT</option>
+            <option>VA</option>
+            <option>WA</option>
+            <option>WV</option>
+            <option>WI</option>
+            <option>WY</option>
+          </select>
+        </div>
+    </div>
+
+    <!-- <div class="form-group">
+        <label for="inputsm">State:</label>
+        <select class="form-control" id="state">
+          <option>AL</option>
+          <option>AK</option>
+          <option>AZ</option>
+          <option>AR</option>
+          <option>CA</option>
+          <option>CO</option>
+          <option>CT</option>
+          <option>DE</option>
+          <option>FL</option>
+          <option>GA</option>
+          <option>HI</option>
+          <option>ID</option>
+          <option>IL</option>
+          <option>IN</option>
+          <option>IA</option>
+          <option>KS</option>
+          <option>KY</option>
+          <option>LA</option>
+          <option>ME</option>
+          <option>MD</option>
+          <option>MA</option>
+          <option>MI</option>
+          <option>MN</option>
+          <option>MS</option>
+          <option>MO</option>
+          <option>MT</option>
+          <option>NE</option>
+          <option>NV</option>
+          <option>NH</option>
+          <option>NJ</option>
+          <option>NM</option>
+          <option>NY</option>
+          <option>NC</option>
+          <option>ND</option>
+          <option>OH</option>
+          <option>OK</option>
+          <option>OR</option>
+          <option>PA</option>
+          <option>RI</option>
+          <option>SC</option>
+          <option>SD</option>
+          <option>TN</option>
+          <option>TX</option>
+          <option>UT</option>
+          <option>VA</option>
+          <option>WA</option>
+          <option>WV</option>
+          <option>WI</option>
+          <option>WY</option>
+        </select>
+      </div> -->
     Home Budget:
     <input id="budget">
     <button id="searchCity">Search City</button>
@@ -53,9 +169,6 @@
                     <div class="card-body">
                         <h5 class="card-title">Economic Data</h5>
                         <canvas id="income-chart" width="30" height="40" aria-label="Average Income" role="img"></canvas>
-                        <p id="card-text">Data Here: </p>
-                        <p id="usa-data">USA Avg. Income: </p>
-                        <p id="state-data">State Avg. Income: </p>
                     </div>
                 </div>
             </div>
@@ -84,9 +197,10 @@
         </div>
     </div>
 
-    <script src="assets/javascript/housing.js"></script>
+    <!-- <script src="assets/javascript/housing.js"></script>
     <script src="assets/javascript/meetup.js"></script>
-    <script src="assets/javascript/weather-data.js"></script>
+    <script src="assets/javascript/weather-data.js"></script> -->
+    <script src="assets/javascript/bea.js"></script>
 
 </body>
 
