@@ -7,13 +7,18 @@
     <title>The Perfect Fit</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0/dist/Chart.min.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase.js"></script>
     <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
-    <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
 </head>
 
 <body>
@@ -52,7 +57,8 @@
                 <div class="card">
                     <div class="card-body">
                         <h5 class="card-title">Economic Data</h5>
-                        <canvas id="income-chart" width="30" height="40" aria-label="Average Income" role="img"></canvas>
+                        <canvas id="income-chart" width="30" height="40" aria-label="Average Income"
+                            role="img"></canvas>
                         <p id="card-text">Data Here: </p>
                         <p id="usa-data">USA Avg. Income: </p>
                         <p id="state-data">State Avg. Income: </p>
@@ -72,21 +78,30 @@
 
             <div class="col-3" id="weatherData">
                 <div class="card">
-                        <h5 class="card-title">Weather Data</h5>
-                        <div id="date"></div>
-                        <div id="temp"></div>
-                        <div id="humidity"></div>
-                        <div id="description"></div>
-                        <div id="wind"></div>
-                        <br>
-                        <a id="map"></a>
+                    <h5 class="card-title">Weather Data</h5>
+                    <div id="location"></div>
+                    <table class="table table-sm table-hover" id='weather-table'>
+                        <thead>
+                            <tr>
+                                <th scope="col">Date</th>
+                                <th scope="col">Temp</th>
+                                <th scope="col">Humidity</th>
+                                <th scope="col">Description</th>
+                                <th scope="col">Wind</th>
+                            </tr>
+                        </thead>
+                        <tbody id="table">
+                        </tbody>
+                    </table>
+                    <br>
+                    <a id="map"></a>
+                </div>
             </div>
         </div>
-    </div>
+        <script src="assets/javascript/meetup.js"></script>
+        <script src="assets/javascript/weather-data.js"></script>
+        <!-- <script src="assets/javascript/housing.js"></script> -->
 
-    <script src="assets/javascript/housing.js"></script>
-    <script src="assets/javascript/meetup.js"></script>
-    <script src="assets/javascript/weather-data.js"></script>
 
 </body>
 
