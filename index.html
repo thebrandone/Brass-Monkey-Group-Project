@@ -26,65 +26,12 @@
     City:
     <input id="city">
     State:
-    <div class="form-group row">
-        <div class="col-xs-1">
-          <label for="state"></label>
-          <select class="form-control" id="state">
-            <option>AL</option>
-            <option>AK</option>
-            <option>AZ</option>
-            <option>AR</option>
-            <option>CA</option>
-            <option>CO</option>
-            <option>CT</option>
-            <option>DE</option>
-            <option>FL</option>
-            <option>GA</option>
-            <option>HI</option>
-            <option>ID</option>
-            <option>IL</option>
-            <option>IN</option>
-            <option>IA</option>
-            <option>KS</option>
-            <option>KY</option>
-            <option>LA</option>
-            <option>ME</option>
-            <option>MD</option>
-            <option>MA</option>
-            <option>MI</option>
-            <option>MN</option>
-            <option>MS</option>
-            <option>MO</option>
-            <option>MT</option>
-            <option>NE</option>
-            <option>NV</option>
-            <option>NH</option>
-            <option>NJ</option>
-            <option>NM</option>
-            <option>NY</option>
-            <option>NC</option>
-            <option>ND</option>
-            <option>OH</option>
-            <option>OK</option>
-            <option>OR</option>
-            <option>PA</option>
-            <option>RI</option>
-            <option>SC</option>
-            <option>SD</option>
-            <option>TN</option>
-            <option>TX</option>
-            <option>UT</option>
-            <option>VA</option>
-            <option>WA</option>
-            <option>WV</option>
-            <option>WI</option>
-            <option>WY</option>
-          </select>
-        </div>
-    </div>
+    <input id="state">
     Home Budget:
     <input id="budget">
     <button id="searchCity">Search City</button>
+    <button id="compareCity">Add Second City</button>
+    <button id="closeCompare">Close Second City</button>
     <br>
 
     <div class="jumbotron cityBlock">
@@ -113,6 +60,9 @@
                     <div class="card-body">
                         <h5 class="card-title">Economic Data</h5>
                         <canvas id="income-chart" width="30" height="40" aria-label="Average Income" role="img"></canvas>
+                        <p id="card-text">Data Here: </p>
+                        <p id="usa-data">USA Avg. Income: </p>
+                        <p id="state-data">State Avg. Income: </p>
                     </div>
                 </div>
             </div>
@@ -129,26 +79,74 @@
 
             <div class="col-3" id="weatherData">
                 <div class="card">
-                    <h5 class="card-title">Weather Data</h5>
-                    <div id="location"></div>
-                    <table class="table table-sm table-hover" id='weather-table'>
-                        <thead>
-                            <tr>
-                                <th scope="col">Date</th>
-                                <th scope="col">Temp</th>
-                                <th scope="col">Humidity</th>
-                                <th scope="col">Description</th>
-                                <th scope="col">Wind</th>
-                            </tr>
-                        </thead>
-                        <tbody id="table">
-                        </tbody>
-                    </table>
-                    <br>
-                    <a id="map"></a>
-                </div>
+                        <h5 class="card-title">Weather Data</h5>
+                        <div id="date"></div>
+                        <div id="temp"></div>
+                        <div id="humidity"></div>
+                        <div id="description"></div>
+                        <div id="wind"></div>
+                        <br>
+                        <a id="map"></a>
             </div>
         </div>
+    </div>
+
+    <div class="jumbotron" id="compareBlock">
+        <div class="row">
+            <div class="col-3" id="houseData2">
+                <div class="card">
+                    <div id="houseCard2" class="card-body">
+                        <h5 class="card-title">Housing Data</h5>
+                        <p class="card-text"></p>
+                        <table class="table">
+                            <thead class="thead-dark">
+                                <tr id="titleData">
+                                    <th scope="col">Neighborhood</th>
+                                    <th scope="col">Average Price</th>
+                                </tr>
+                            </thead>
+                            <tbody id="houseRow2">
+                                <div id="tempInfo2"></div>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="col-3" id="economicData2">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Economic Data</h5>
+                        <canvas id="income-chart" width="30" height="40" aria-label="Average Income" role="img"></canvas>
+                        <p id="card-text">Data Here: </p>
+                        <p id="usa-data">USA Avg. Income: </p>
+                        <p id="state-data">State Avg. Income: </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-3">
+                <div class="card">
+                    <div class="card-body" id="meetupData2">
+                        <h5 class="card-title">Meetup Data</h5>
+
+                        <p class="card-text"></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-3" id="weatherData2">
+                <div class="card">
+                        <h5 class="card-title">Weather Data</h5>
+                        <div id="date"></div>
+                        <div id="temp"></div>
+                        <div id="humidity"></div>
+                        <div id="description"></div>
+                        <div id="wind"></div>
+                        <br>
+                        <a id="map"></a>
+            </div>
+        </div>
+    </div>
         <script src="assets/javascript/meetup.js"></script>
         <script src="assets/javascript/weather-data.js"></script>
         <script src="assets/javascript/housing.js"></script>
