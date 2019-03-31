@@ -80,12 +80,12 @@ body{
 
 #titleText{
     color: black;
-    background: white;
+    background:lightgray;
     border-style: solid;
     border-radius: 32px;
     font-size: 3em;
-    align-items: center;
-    
+    align-items: center; 
+    opacity: .7;   
 }
 
 #buttonInput{
