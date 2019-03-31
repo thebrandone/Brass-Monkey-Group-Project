@@ -65,7 +65,6 @@ body{
     text-align: center;
     height: 200px;
     background-image: url("../../assets/images/citybackground.png");
-    opacity: .7;
     background-size: cover;
     background-position: center bottom;
     padding-top: 2em;
@@ -79,7 +78,6 @@ body{
 }
 
 #titleText{
-    opacity: 1;
     color: black;
     background: white;
     border-style: solid;
@@ -87,4 +85,30 @@ body{
     font-size: 3em;
     align-items: center;
     
+}
+
+#buttonInput{
+    align-items: center;
+    border-style: solid;
+    border-color: black;
+    border-width: 2px;
+    border-radius: 32px;
+    text-align: center;
+    color: rgba(255,255,255,1.0);
+    font-size: x-large;
+}
+
+#searchCity,#compareCity,#closeCompare{
+    border-radius: 16px;
+    border-color: black;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#buttonBar{
+    background-image: url("../../assets/images/citybackground2.png");
+    background-size: cover;
+    background-position: center bottom;
+    border-radius: 32px;
+    margin: 0 10px 0 10px;
 }
