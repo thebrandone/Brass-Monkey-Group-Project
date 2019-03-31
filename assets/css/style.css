@@ -44,6 +44,7 @@ div#charts{
     border-style: solid;
     border-width: 2px;
     padding: 5px;
+    margin: 0 10px 0 10px;
     background: rgb(147,169,182);
 }
 
@@ -111,4 +112,8 @@ body{
     background-position: center bottom;
     border-radius: 32px;
     margin: 0 10px 0 10px;
+}
+
+div{
+    border-radius: 52px;
 }

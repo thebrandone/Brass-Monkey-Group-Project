@@ -1,4 +1,6 @@
+$("#cityBlock").fadeOut('fast');
 $("#compareBlock").fadeOut('fast');
+
 
 var apiKey = "X1-ZWz181dk3qv8y3_8uv2u"
 var budget = 0;
@@ -84,6 +86,7 @@ function drawHousing(response) {
 	var higherBudget = budget + (budget * .1);
 
 	if (compareButton === 0) {
+		$("#cityBlock").fadeIn('slow');
 		$("#houseRow").empty();
 
 		for (var i = 0; i < length; i++) {
