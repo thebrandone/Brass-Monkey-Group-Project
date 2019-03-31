@@ -58,6 +58,7 @@ div#charts{
 body{
     margin: 0 10px 0 10px;
     margin-top: 5px;
+    background: lightgray;
 }
 
 #title{
