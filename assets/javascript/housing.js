@@ -167,9 +167,9 @@ $(document).on("click", ".openInfo", function (e) {
 		$("#tempInfo").fadeIn('slow');
 		$("#houseRow").fadeOut('slow');
 		$("#economicData").fadeOut('slow');
-		$("#meetupData").fadeOut('slow');
-		$("#weatherData").fadeOut('slow');
-		$("#houseData").attr("class", "col-12");
+		// $("#meetupData").fadeOut('slow');
+		// $("#weatherData").fadeOut('slow');
+		$("#houseData").attr("class", "col-6");
 		$("#titleData").fadeOut('fast');
 	
 });
@@ -183,9 +183,9 @@ $(document).on("click", ".openInfo2", function (e) {
 		$("#tempInfo2").fadeIn('slow');
 		$("#houseRow2").fadeOut('slow');
 		$("#economicData2").fadeOut('slow');
-		$("#meetupData2").fadeOut('slow');
-		$("#weatherData2").fadeOut('slow');
-		$("#houseData2").attr("class", "col-12");
+		// $("#meetupData2").fadeOut('slow');
+		// $("#weatherData2").fadeOut('slow');
+		$("#houseData2").attr("class", "col-6");
 		$("#titleData2").fadeOut('fast');
 	
 });
@@ -193,8 +193,8 @@ $(document).on("click", ".openInfo2", function (e) {
 $(document).on("click", "#close", function () {
 	$("#houseRow").fadeIn("slow");
 	$("#economicData").fadeIn('slow');
-	$("#meetupData").fadeIn('slow');
-	$("#weatherData").fadeIn('slow');
+	// $("#meetupData").fadeIn('slow');
+	// $("#weatherData").fadeIn('slow');
 	$("#tempInfo").fadeOut("slow");
 	$("#houseData").attr("class", "col-3");
 	$("#titleData").fadeIn('fast');
@@ -203,8 +203,8 @@ $(document).on("click", "#close", function () {
 $(document).on("click", "#close2", function () {
 	$("#houseRow2").fadeIn("slow");
 	$("#economicData2").fadeIn('slow');
-	$("#meetupData2").fadeIn('slow');
-	$("#weatherData2").fadeIn('slow');
+	// $("#meetupData2").fadeIn('slow');
+	// $("#weatherData2").fadeIn('slow');
 	$("#tempInfo2").fadeOut("slow");
 	$("#houseData2").attr("class", "col-3");
 	$("#titleData2").fadeIn('fast');

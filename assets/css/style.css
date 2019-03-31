@@ -5,10 +5,11 @@
 
 .card{
   text-align: center;
+  border-radius: 32px;
 }
 
 #zillow-large-search-box-widget-container{
-    width: 100%;
+    width: 25%;
 }
 
 div#charts{
@@ -17,12 +18,8 @@ div#charts{
 
 #houseData,#economicData,#meetupData,#weatherData,
 #houseData2,#economicData2,#meetupData2,#weatherData2{
-    max-height: 600px;
+    max-height: 780px;
     overflow-y: scroll;
-    border-style: solid;
-    border-width: 2px;
-    border-color: black;
-    padding: 0;
 }
 
 .form-group{
@@ -42,3 +39,51 @@ div#charts{
     width: 100%;
 }
 
+.jumbotron{
+    border-radius: 32px;
+    border-style: solid;
+    border-width: 2px;
+    padding: 5px;
+    background: rgb(147,169,182);
+}
+
+.card-body{
+    margin: 5px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: black;
+    border-radius: 32px;
+}
+
+body{
+    margin: 0 10px 0 10px;
+    margin-top: 5px;
+}
+
+#title{
+    text-align: center;
+    height: 200px;
+    background-image: url("../../assets/images/citybackground.png");
+    opacity: .7;
+    background-size: cover;
+    background-position: center bottom;
+    padding-top: 2em;
+    padding-bottom: 2em;
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 32px;
+    align-items: center;
+    margin: 0 10px 0 10px;
+
+}
+
+#titleText{
+    opacity: 1;
+    color: black;
+    background: white;
+    border-style: solid;
+    border-radius: 32px;
+    font-size: 3em;
+    align-items: center;
+    
+}
