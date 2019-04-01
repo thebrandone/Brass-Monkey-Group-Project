@@ -72,7 +72,6 @@ $("#compareCity").on("click", function (event) {
 	}).then(function (response) {
 		var responseJson = xmlToJson(response);
 		object2 = responseJson["RegionChildren:regionchildren"].response.list.region;
-		console.log(object2);
 		drawHousing();
 	});
 });
@@ -82,12 +81,9 @@ function drawHousing() {
 	
 
 	if (compareButton === 0) {
-		console.log(obj);
-
 		var lowerBudget = budget - (budget * .4); //Makes lower budget half of amount lower
 		var higherBudget = budget + (budget * .1);
 	
-
 		$("#cityBlock").fadeIn('slow');
 		$("#houseRow").empty();
 
@@ -100,13 +96,10 @@ function drawHousing() {
 
 			if (obj[i].zindex >= lowerBudget && obj[i].zindex <= higherBudget) {
 				$("#houseRow").append(info);
-				console.log("appending info");
 			}
 		}
 	}
 	else {
-		console.log(object2);
-
 		var lowerBudget = budget2 - (budget2 * .4); //Makes lower budget half of amount lower
 		var higherBudget = budget2 + (budget2 * .1);
 	
@@ -122,7 +115,6 @@ function drawHousing() {
 
 			if (object2[i].zindex >= lowerBudget && object2[i].zindex <= higherBudget) {
 				$("#houseRow2").append(info);
-				console.log("appending comparison");
 			}
 		}
 		compareButton=0;
