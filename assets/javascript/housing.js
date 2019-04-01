@@ -62,7 +62,7 @@ $("#compareCity").on("click", function (event) {
 
 	compareButton = 1;
 
-	var queryURL = "http://www.zillow.com/webservice/GetRegionChildren.htm?zws-id=" + apiKey + "&state=" + state + "&city=" + city + "&childtype=neighborhood";
+	var queryURL = "https://www.zillow.com/webservice/GetRegionChildren.htm?zws-id=" + apiKey + "&state=" + state + "&city=" + city + "&childtype=neighborhood";
 
 	queryURL = proxyURL + queryURL;
 
