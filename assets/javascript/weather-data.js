@@ -14,7 +14,7 @@ $(document).ready(function () {
         var lat = 0;
         var lng = 0;
         var citySelected = $("#city").val();
-        var test = "https://open.mapquestapi.com/geocoding/v1/address?key=Yv02J8MR33iOAadfedxGdFn91hIDdTG2&location="+ citySelected + ","+ stateSelected
+        var test = "http://open.mapquestapi.com/geocoding/v1/address?key=Yv02J8MR33iOAadfedxGdFn91hIDdTG2&location="+ citySelected + ","+ stateSelected
         $.ajax({
             url: test,
             dataType: "json",
@@ -64,7 +64,7 @@ $(document).ready(function () {
         var lat = 0;
         var lng = 0;
         var citySelected = $("#city").val();
-        var test = "https://open.mapquestapi.com/geocoding/v1/address?key=Yv02J8MR33iOAadfedxGdFn91hIDdTG2&location="+ citySelected + ","+ stateSelected
+        var test = "http://open.mapquestapi.com/geocoding/v1/address?key=Yv02J8MR33iOAadfedxGdFn91hIDdTG2&location="+ citySelected + ","+ stateSelected
         $.ajax({
             url: test,
             dataType: "json",
