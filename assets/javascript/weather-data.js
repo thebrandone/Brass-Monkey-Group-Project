@@ -1,6 +1,5 @@
 $(document).ready(function () {
     var apiKey = "bf0fe2b0776e786b0b03723a094e6d31";
-    var citySelected;
     var wind;
     var temp;
     var humidity;
@@ -11,8 +10,22 @@ $(document).ready(function () {
     $("#searchCity").on("click", function () {
         $("#table").empty();
         $("#map").empty();
-        citySelected = $("#city").val();
-        var queryURL = "https://api.openweathermap.org/data/2.5/forecast?q=" + citySelected + "&mode=json&units=imperial&appid=" + apiKey;
+        var stateSelected = $("#state").val();
+        var lat = 0;
+        var lng = 0;
+        var citySelected = $("#city").val();
+        var test = "http://open.mapquestapi.com/geocoding/v1/address?key=Yv02J8MR33iOAadfedxGdFn91hIDdTG2&location="+ citySelected + ","+ stateSelected
+        $.ajax({
+            url: test,
+            dataType: "json",
+            method:"GET"
+        })
+        .then(function (response){
+            lat = response.results[0].locations[0].latLng.lat;
+            lng =response.results[0].locations[0].latLng.lng;
+            
+       
+        var queryURL = "https://api.openweathermap.org/data/2.5/forecast?lat=" + lat + "&lon="+ lng + "&mode=json&units=imperial&appid=" + apiKey;
         $.ajax({
             url: queryURL,
             method: "GET"
@@ -36,19 +49,33 @@ $(document).ready(function () {
                         );
                         $("#weather-table > tbody").append(newRow);
                 };
-                
-                var mapURL = "https://openweathermap.org/weathermap?basemap=map&cities=false&layer=pressure&lat=" + response.city.coord.lat + "&lon=" + response.city.coord.lon + "&zoom=10";
-                $("#map").append(mapURL);
-                $("#map").attr("href", "https://openweathermap.org/weathermap?basemap=map&cities=false&layer=pressure&lat=" + response.city.coord.lat + "&lon=" + response.city.coord.lon + "&zoom=10");
-                
-            })
+            
+                var mapURL = "https://openweathermap.org/weathermap?basemap=map&cities=false&layer=pressure&lat=" + lat+ "&lon=" + lng + "&zoom=10";
+                $("#map").text("SHOW MAP");
+                $("#map").attr("href", "https://openweathermap.org/weathermap?basemap=map&cities=false&layer=pressure&lat=" + lat+ "&lon=" + lng + "&zoom=10");
+            }); 
+            });
             
     })
     $("#compareCity").on("click", function () {
         $("#table2").empty();
         $("#map2").empty();
-        citySelected = $("#city").val();
-        var queryURL = "https://api.openweathermap.org/data/2.5/forecast?q=" + citySelected + "&mode=json&units=imperial&appid=" + apiKey;
+        var stateSelected = $("#state").val();
+        var lat = 0;
+        var lng = 0;
+        var citySelected = $("#city").val();
+        var test = "http://open.mapquestapi.com/geocoding/v1/address?key=Yv02J8MR33iOAadfedxGdFn91hIDdTG2&location="+ citySelected + ","+ stateSelected
+        $.ajax({
+            url: test,
+            dataType: "json",
+            method:"GET"
+        })
+        .then(function (response){
+            lat = response.results[0].locations[0].latLng.lat;
+            lng =response.results[0].locations[0].latLng.lng;
+            
+       
+        var queryURL = "https://api.openweathermap.org/data/2.5/forecast?lat=" + lat + "&lon="+ lng + "&mode=json&units=imperial&appid=" + apiKey;
         $.ajax({
             url: queryURL,
             method: "GET"
@@ -71,15 +98,15 @@ $(document).ready(function () {
                         $("<td>").text(wind),
                         );
                         $("#weather-table2 > tbody").append(newRow);
-                        
-                };
+            };
                 
-                var mapURL = "https://openweathermap.org/weathermap?basemap=map&cities=false&layer=pressure&lat=" + response.city.coord.lat + "&lon=" + response.city.coord.lon + "&zoom=10";
-                $("#map2").append(mapURL);
-                $("#map2").attr("href", "https://openweathermap.org/weathermap?basemap=map&cities=false&layer=pressure&lat=" + response.city.coord.lat + "&lon=" + response.city.coord.lon + "&zoom=10");
+            var mapURL = "https://openweathermap.org/weathermap?basemap=map&cities=false&layer=pressure&lat=" + lat+ "&lon=" + lng + "&zoom=10";
+                $("#map2").text("SHOW MAP");
+                $("#map2").attr("href", "https://openweathermap.org/weathermap?basemap=map&cities=false&layer=pressure&lat=" + lat+ "&lon=" + lng + "&zoom=10");
                 
             })
             
     })
     
-})
+    });
+});
