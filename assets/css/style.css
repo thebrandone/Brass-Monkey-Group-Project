@@ -4,5 +4,116 @@
 }
 
 .card{
-  
+  text-align: center;
+  border-radius: 32px;
+}
+
+#zillow-large-search-box-widget-container{
+    width: 25%;
+}
+
+div#charts{
+    padding-left: 38%;
+}
+
+#houseData,#economicData,#meetupData,#weatherData,
+#houseData2,#economicData2,#meetupData2,#weatherData2{
+    max-height: 780px;
+    overflow-y: scroll;
+}
+
+.form-group{
+    margin:0%;
+    width: 150px;
+    display: inline-block;
+    margin-right: 1%;
+    margin-left: 1%;
+}
+
+#meetupData img {
+    height: 200px;
+    width: 100%;
+}
+#meetupData2 img {
+    height: 200px;
+    width: 100%;
+}
+
+.jumbotron{
+    border-radius: 32px;
+    border-style: solid;
+    border-width: 2px;
+    padding: 5px;
+    margin: 0 10px 15px 10px;
+    background: rgb(147,169,182);
+}
+
+.card-body{
+    margin: 5px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: black;
+    border-radius: 32px;
+}
+
+body{
+    margin: 0 10px 0 10px;
+    margin-top: 5px;
+    background: lightgray;
+}
+
+#title{
+    text-align: center;
+    height: 200px;
+    background-image: url("../../assets/images/citybackground.png");
+    background-size: cover;
+    background-position: center bottom;
+    padding-top: 2em;
+    padding-bottom: 2em;
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 32px;
+    align-items: center;
+    margin: 0 10px 0 10px;
+
+}
+
+#titleText{
+    color: black;
+    background:lightgray;
+    border-style: solid;
+    border-radius: 32px;
+    font-size: 3em;
+    align-items: center; 
+    opacity: .7;   
+}
+
+#buttonInput{
+    align-items: center;
+    border-style: solid;
+    border-color: black;
+    border-width: 2px;
+    border-radius: 32px;
+    text-align: center;
+    color: rgba(255,255,255,1.0);
+    font-size: x-large;
+}
+
+#searchCity,#compareCity,#closeCompare{
+    border-radius: 16px;
+    border-color: black;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#buttonBar{
+    background-image: url("../../assets/images/citybackground2.png");
+    background-size: cover;
+    background-position: center bottom;
+    border-radius: 32px;
+    margin: 0 10px 0 10px;
+}
+
+div{
+    border-radius: 32px;
 }
